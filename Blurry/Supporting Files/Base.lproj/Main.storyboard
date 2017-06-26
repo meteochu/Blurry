@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Blurr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="22o-Y0-4qa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="drE-TM-RUl">
+                                <rect key="frame" x="26" y="319" width="323" height="29"/>
+                                <segments>
+                                    <segment title="Dark"/>
+                                    <segment title="Light"/>
+                                    <segment title="Extra Light"/>
+                                    <segment title="Custom"/>
+                                </segments>
+                                <connections>
+                                    <action selector="blurModeButtonChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="RCO-HV-HBp"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfU-RD-aLd">
+                                <rect key="frame" x="134" y="467" width="106" height="33"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Open Photos"/>
+                                <connections>
+                                    <action selector="didTapPhotosButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zdT-2O-BPG"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="qeu-eQ-1md">
+                                <rect key="frame" x="24" y="407" width="327" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4HK-Cb-HsA"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3u-PF-kKm">
+                                <rect key="frame" x="0.0" y="560" width="375" height="30"/>
+                                <state key="normal" title="Save Image"/>
+                                <connections>
+                                    <action selector="didTapSaveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZsQ-98-cNc"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAf-dX-42c" customClass="ChromaColorPicker" customModule="Blurr" customModuleProvider="target">
+                                <rect key="frame" x="59" y="33" width="256" height="256"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="9aJ-6c-2WN"/>
+                                    <constraint firstAttribute="width" constant="256" id="bVi-6a-LfD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="drE-TM-RUl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="0xi-Gv-YHd"/>
+                            <constraint firstItem="drE-TM-RUl" firstAttribute="top" secondItem="yAf-dX-42c" secondAttribute="bottom" constant="30" id="2g5-Ir-dyv"/>
+                            <constraint firstItem="qeu-eQ-1md" firstAttribute="trailing" secondItem="drE-TM-RUl" secondAttribute="trailing" id="4Ux-4m-Lwe"/>
+                            <constraint firstAttribute="trailing" secondItem="G3u-PF-kKm" secondAttribute="trailing" id="4xq-J8-Gpx"/>
+                            <constraint firstItem="22o-Y0-4qa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5uy-MV-v4X"/>
+                            <constraint firstItem="drE-TM-RUl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6N9-Mu-Dm7"/>
+                            <constraint firstItem="yfU-RD-aLd" firstAttribute="top" secondItem="qeu-eQ-1md" secondAttribute="bottom" constant="30" id="DHq-4f-QAW"/>
+                            <constraint firstItem="yAf-dX-42c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FbL-Tq-54Y"/>
+                            <constraint firstItem="G3u-PF-kKm" firstAttribute="top" secondItem="yfU-RD-aLd" secondAttribute="bottom" constant="60" id="HJg-iF-fjC"/>
+                            <constraint firstItem="yfU-RD-aLd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iog-1K-x66"/>
+                            <constraint firstItem="qeu-eQ-1md" firstAttribute="leading" secondItem="drE-TM-RUl" secondAttribute="leading" id="Kvx-Dr-KKg"/>
+                            <constraint firstItem="qeu-eQ-1md" firstAttribute="top" secondItem="drE-TM-RUl" secondAttribute="bottom" constant="60" id="NPR-RV-3GX"/>
+                            <constraint firstItem="G3u-PF-kKm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NaE-fv-2io"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="drE-TM-RUl" secondAttribute="bottom" constant="320" id="QdR-yI-jLa"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yfU-RD-aLd" secondAttribute="trailing" id="RVT-NM-9Oj"/>
+                            <constraint firstItem="yfU-RD-aLd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WRH-Ap-tG3"/>
+                            <constraint firstAttribute="trailing" secondItem="22o-Y0-4qa" secondAttribute="trailing" id="XNY-H8-ayh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="22o-Y0-4qa" secondAttribute="bottom" id="bhG-zn-Lj9"/>
+                            <constraint firstItem="yAf-dX-42c" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="hpy-jX-aRa"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="drE-TM-RUl" secondAttribute="trailing" id="iDY-W2-V9Y"/>
+                            <constraint firstItem="22o-Y0-4qa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="jTX-UU-boW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorPicker" destination="yAf-dX-42c" id="xsb-sE-kda"/>
+                        <outlet property="imageView" destination="22o-Y0-4qa" id="Tx5-SE-S0e"/>
+                        <outlet property="saveButton" destination="G3u-PF-kKm" id="6Sf-UR-OCS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
