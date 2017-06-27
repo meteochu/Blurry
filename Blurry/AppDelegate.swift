@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    let attributes: [String: Any] = [NSAttributedStringKey.font.rawValue: UIFont.systemFont(ofSize: 12, weight: .bold),
+                                     NSAttributedStringKey.kern.rawValue: 2.0]
+    UISegmentedControl.appearance().setTitleTextAttributes(attributes, for: .normal)
     return true
   }
 

@@ -11,7 +11,6 @@ import UIKit
 enum BlurStyle {
     case dark
     case light
-    case extraLight
     case tintColor(UIColor)
     
     var tintColor: UIColor {
@@ -20,8 +19,6 @@ enum BlurStyle {
             return .white
         case .light:
             return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
-        case .extraLight:
-            return UIColor(red: 0, green: 0.5, blue: 1, alpha: 1)
         case .tintColor:
             return .white
         }
@@ -33,10 +30,8 @@ enum BlurStyle {
             return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
         case .light:
             return UIColor(white: 0.9, alpha: 1)
-        case .extraLight:
-            return .white
         case .tintColor:
-            return .darkGray
+            return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
         }
     }
 }
@@ -46,6 +41,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var saveButton: UIButton!
+    
+    @IBOutlet weak var blurRadiusLabel: UILabel!
     
     private var blurredImage: UIImage? {
         didSet {
@@ -79,7 +76,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private var currentColor: UIColor = UIColor(white: 1, alpha: 0.5)
+    private var currentColor: UIColor = UIColor.red.withAlphaComponent(0.35)
     
     @IBOutlet weak var colorPicker: ChromaColorPicker!
     
@@ -102,6 +99,7 @@ class ViewController: UIViewController {
     func updateViewColors() {
         self.view.tintColor = self.blurStyle.tintColor
         self.view.backgroundColor = self.blurStyle.backgroundColor
+        blurRadiusLabel.textColor = self.blurStyle.tintColor
     }
     
     func processImage() {
@@ -110,12 +108,9 @@ class ViewController: UIViewController {
         switch self.blurStyle {
         case .dark:
             blurredImage = UIImageEffects.imageByApplyingDarkEffect(to: image, withRadius: self.blurRadius)
-        case .extraLight:
-            blurredImage = UIImageEffects.imageByApplyingExtraLightEffect(to: image, withRadius: self.blurRadius)
         case .light:
             blurredImage = UIImageEffects.imageByApplyingLightEffect(to: image, withRadius: self.blurRadius)
         case .tintColor(let color):
-            print(color)
             blurredImage = UIImageEffects.imageByApplyingBlur(to: image, withRadius: self.blurRadius, tintColor: color, saturationDeltaFactor: -1, maskImage: nil)
             break
         }
@@ -129,8 +124,6 @@ class ViewController: UIViewController {
         case 1:
             self.blurStyle = .light
         case 2:
-            self.blurStyle = .extraLight
-        case 3:
             self.blurStyle = .tintColor(currentColor)
         default: return
         }
@@ -138,7 +131,9 @@ class ViewController: UIViewController {
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let value = CGFloat(sender.value)
-        if abs(value - blurRadius) >= 5 {
+        blurRadiusLabel.text = "Blur Radius (\(Int(value)))".uppercased()
+        // avoid spamming blur, only re-blur image if there's a 3+ diff
+        if abs(value - blurRadius) >= 3 {
             self.blurRadius = value
         }
     }
@@ -176,7 +171,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             return
         }
         self.originalImage = image
-        
     }
     
 }
