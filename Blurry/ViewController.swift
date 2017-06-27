@@ -30,8 +30,8 @@ enum BlurStyle {
             return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
         case .light:
             return UIColor(white: 0.9, alpha: 1)
-        case .tintColor:
-            return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
+        case .tintColor(let color):
+            return color
         }
     }
 }
@@ -43,6 +43,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     @IBOutlet weak var blurRadiusLabel: UILabel!
+    
+    @IBOutlet weak var opacityLabel: UILabel!
+    
+    @IBOutlet weak var colorPicker: ChromaColorPicker!
+    
+    @IBOutlet weak var colorPickerBackgroundView: UIView!
     
     private var blurredImage: UIImage? {
         didSet {
@@ -64,12 +70,14 @@ class ViewController: UIViewController {
         }
     }
     
+    private var colorAlpha: CGFloat = 0.35
+    
     private var blurStyle: BlurStyle = .dark {
         didSet {
             if case .tintColor = blurStyle {
-                self.colorPicker.isHidden = false
+                self.colorPickerBackgroundView.isHidden = false
             } else {
-                self.colorPicker.isHidden = true
+                self.colorPickerBackgroundView.isHidden = true
             }
             self.processImage()
             self.updateViewColors()
@@ -78,21 +86,19 @@ class ViewController: UIViewController {
     
     private var currentColor: UIColor = UIColor.red.withAlphaComponent(0.35)
     
-    @IBOutlet weak var colorPicker: ChromaColorPicker!
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
     override func loadView() {
         super.loadView()
+        self.colorPickerBackgroundView.isHidden = true
+        self.colorPickerBackgroundView.layer.cornerRadius = 16
+        self.colorPickerBackgroundView.layer.masksToBounds = true
+        self.colorPickerBackgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.1)
         self.colorPicker.hexLabel.textColor = .white
         self.colorPicker.stroke = 6
         self.colorPicker.delegate = self
-        self.colorPicker.isHidden = true
-        self.colorPicker.backgroundColor = UIColor.white.withAlphaComponent(0.1)
-        self.colorPicker.layer.cornerRadius = 16
-        self.colorPicker.layer.masksToBounds = true
         self.updateViewColors()
     }
     
@@ -100,6 +106,7 @@ class ViewController: UIViewController {
         self.view.tintColor = self.blurStyle.tintColor
         self.view.backgroundColor = self.blurStyle.backgroundColor
         blurRadiusLabel.textColor = self.blurStyle.tintColor
+        opacityLabel.textColor = self.blurStyle.tintColor
     }
     
     func processImage() {
@@ -135,6 +142,14 @@ class ViewController: UIViewController {
         // avoid spamming blur, only re-blur image if there's a 3+ diff
         if abs(value - blurRadius) >= 3 {
             self.blurRadius = value
+        }
+    }
+    
+    @IBAction func opacitySliderValueChanged(_ sender: UISlider) {
+        let newAlpha = CGFloat(sender.value)
+        if case .tintColor(let color) = self.blurStyle, abs(newAlpha - colorAlpha) < 5 {
+            self.blurStyle = .tintColor(color.withAlphaComponent(newAlpha))
+            self.colorAlpha = newAlpha
         }
     }
     
@@ -178,7 +193,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 extension ViewController: ChromaColorPickerDelegate {
     
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
-        self.currentColor = color.withAlphaComponent(0.35)
+        self.currentColor = color.withAlphaComponent(colorAlpha)
         self.blurStyle = .tintColor(currentColor)
     }
     
