@@ -217,7 +217,7 @@
             CGFloat inputRadius = blurRadius * inputImageScale;
             if (inputRadius - 2. < __FLT_EPSILON__)
                 inputRadius = 2.;
-            uint32_t radius = floor((inputRadius * 3. * sqrt(2 * CGFloat.pi) / 4 + 0.5) / 2);
+            uint32_t radius = floor((inputRadius * 3. * sqrt(2 * M_PI) / 4 + 0.5) / 2);
             
             radius |= 1; // force radius to be odd so that the three box-blur methodology works.
             
