@@ -139,15 +139,16 @@ class ViewController: UIViewController {
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let value = CGFloat(sender.value)
         blurRadiusLabel.text = "Blur Radius (\(Int(value)))".uppercased()
-        // avoid spamming blur, only re-blur image if there's a 3+ diff
-        if abs(value - blurRadius) >= 3 {
+        // avoid spamming blur, only re-blur image if there's a 5+ diff
+        if abs(value - blurRadius) >= 5 {
             self.blurRadius = value
         }
     }
     
     @IBAction func alphaSliderValueChanged(_ sender: UISlider) {
         let newAlpha = CGFloat(sender.value)
-        if case .tintColor(let color) = self.blurStyle, abs(newAlpha - colorAlpha) < 5 {
+        if case .tintColor(let color) = self.blurStyle, abs(newAlpha - colorAlpha) >= 0.05 {
+            // avoid spamming blur, only re-blur image if the alpha has 0.05+ changes
             self.blurStyle = .tintColor(color.withAlphaComponent(newAlpha))
             self.colorAlpha = newAlpha
         }
