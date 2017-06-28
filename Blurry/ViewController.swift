@@ -145,7 +145,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func opacitySliderValueChanged(_ sender: UISlider) {
+    @IBAction func alphaSliderValueChanged(_ sender: UISlider) {
         let newAlpha = CGFloat(sender.value)
         if case .tintColor(let color) = self.blurStyle, abs(newAlpha - colorAlpha) < 5 {
             self.blurStyle = .tintColor(color.withAlphaComponent(newAlpha))
