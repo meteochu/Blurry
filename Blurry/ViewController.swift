@@ -86,6 +86,13 @@ class ViewController: UIViewController {
     
     private var currentColor: UIColor = UIColor.red.withAlphaComponent(0.35)
     
+    
+    /// flag to check whether the app is already processing another image
+    private var isProcessingImage: Bool = false
+    
+    /// use dispatch items to queue up the next process after current image is blurred
+    private var nextDispatchItem: DispatchWorkItem?
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -109,19 +116,33 @@ class ViewController: UIViewController {
         opacityLabel.textColor = self.blurStyle.tintColor
     }
     
-    func processImage() {
+    // MARK: - blur methods + its helpers
+    
+    private func processImage(item: DispatchWorkItem? = nil) {
         guard let image = self.originalImage else { return }
-        var blurredImage: UIImage?
-        switch self.blurStyle {
-        case .dark:
-            blurredImage = UIImageEffects.imageByApplyingDarkEffect(to: image, withRadius: self.blurRadius)
-        case .light:
-            blurredImage = UIImageEffects.imageByApplyingLightEffect(to: image, withRadius: self.blurRadius)
-        case .tintColor(let color):
-            blurredImage = UIImageEffects.imageByApplyingBlur(to: image, withRadius: self.blurRadius, tintColor: color, saturationDeltaFactor: -1, maskImage: nil)
-            break
+        
+        if isProcessingImage {
+            self.nextDispatchItem = createWorkItem(for: image, radius: self.blurRadius)
+        } else {
+            let workItem = item ?? createWorkItem(for: image, radius: self.blurRadius)
+            DispatchQueue.global(qos: .background).async(execute: workItem)
         }
-        self.blurredImage = blurredImage
+    }
+    
+    private func createWorkItem(for image: UIImage, radius: CGFloat) -> DispatchWorkItem {
+        return DispatchWorkItem { [weak self] in
+            self?.isProcessingImage = true
+            guard let blurStyle = self?.blurStyle else { return }
+            let blurredImage = image.applying(style: blurStyle, with: radius)
+            DispatchQueue.main.async { [weak self] in
+                self?.blurredImage = blurredImage
+                self?.isProcessingImage = false
+                if let item = self?.nextDispatchItem {
+                    self?.nextDispatchItem = nil
+                    self?.processImage(item: item)
+                }
+            }
+        }
     }
     
     @IBAction func blurModeButtonChanged(_ sender: UISegmentedControl) {
