@@ -8,36 +8,10 @@
 
 import UIKit
 
-enum BlurStyle {
-    case dark
-    case light
-    case tintColor(UIColor)
-    
-    var tintColor: UIColor {
-        switch self {
-        case .dark:
-            return .white
-        case .light:
-            return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
-        case .tintColor:
-            return .white
-        }
-    }
-    
-    var backgroundColor: UIColor {
-        switch self {
-        case .dark:
-            return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
-        case .light:
-            return UIColor(white: 0.9, alpha: 1)
-        case .tintColor(let color):
-            return color
-        }
-    }
-}
-
 class ViewController: UIViewController {
     
+    // MARK: - view / storyboard properties
+  
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var saveButton: UIButton!
@@ -50,12 +24,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var colorPickerBackgroundView: UIView!
     
-    private var blurredImage: UIImage? {
-        didSet {
-            self.imageView.image = blurredImage
-        }
-    }
+    // MARK: - image + blur properties
     
+    /// the image loaded from Photos
     private var originalImage: UIImage? {
         didSet {
             guard let _ = self.originalImage else { return }
@@ -64,14 +35,14 @@ class ViewController: UIViewController {
         }
     }
     
-    private var blurRadius: CGFloat = 60.0 {
+    /// the blurred image that can be saved
+    private var blurredImage: UIImage? {
         didSet {
-            self.processImage()
+            self.imageView.image = blurredImage
         }
     }
     
-    private var colorAlpha: CGFloat = 0.35
-    
+    /// the blur style, default .dark
     private var blurStyle: BlurStyle = .dark {
         didSet {
             if case .tintColor = blurStyle {
@@ -84,8 +55,19 @@ class ViewController: UIViewController {
         }
     }
     
+    /// the radius to blur the image by
+    private var blurRadius: CGFloat = 60.0 {
+        didSet {
+            blurRadiusLabel.text = "Blur Radius (\(Int(blurRadius)))".uppercased()
+            self.processImage()
+        }
+    }
+    
+    /// the colour to tint the image, used with BlurStyle.tintColor(color)
     private var currentColor: UIColor = UIColor.red.withAlphaComponent(0.35)
     
+    /// the color alpha to tint the image, used with BlurStyle.tintColor(color)
+    private var colorAlpha: CGFloat = 0.35
     
     /// flag to check whether the app is already processing another image
     private var isProcessingImage: Bool = false
@@ -96,6 +78,8 @@ class ViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    // MARK: - view methods
     
     override func loadView() {
         super.loadView()
@@ -145,6 +129,8 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - IBAction methods
+    
     @IBAction func blurModeButtonChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -158,10 +144,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
-        let value = CGFloat(sender.value)
-        blurRadiusLabel.text = "Blur Radius (\(Int(value)))".uppercased()
-        // avoid spamming blur, only re-blur image if there's a 5+ diff
-        if abs(value - blurRadius) >= 5 {
+        let value = CGFloat(Int(sender.value))
+        // only re-blur image if there's a diff
+        if abs(value - blurRadius) >= 1 {
             self.blurRadius = value
         }
     }
@@ -195,6 +180,7 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - ViewController + UIImagePickerControllerDelegate
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -212,6 +198,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     
 }
 
+// MARK: - ViewController + ChromaColorPickerDelegate
 extension ViewController: ChromaColorPickerDelegate {
     
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {

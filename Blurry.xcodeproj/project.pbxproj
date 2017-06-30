@@ -12,6 +12,8 @@
 		1106CA511F01A0FA00434E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA4F1F01A0FA00434E58 /* Main.storyboard */; };
 		1106CA531F01A0FA00434E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA521F01A0FA00434E58 /* Assets.xcassets */; };
 		1106CA561F01A0FA00434E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA541F01A0FA00434E58 /* LaunchScreen.storyboard */; };
+		1165BC741F06E42900460749 /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC731F06E42900460749 /* UIImage+Blur.swift */; };
+		1165BC761F06E44200460749 /* BlurStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC751F06E44200460749 /* BlurStyle.swift */; };
 		1177F58B1F01C5A800B572DC /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F5861F01C40000B572DC /* ChromaAddButton.swift */; };
 		1177F58C1F01C5A800B572DC /* ChromaColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F5871F01C40000B572DC /* ChromaColorPicker.swift */; };
 		1177F58D1F01C5A800B572DC /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F5881F01C40000B572DC /* ChromaHandle.swift */; };
@@ -28,6 +30,8 @@
 		1106CA521F01A0FA00434E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1106CA551F01A0FA00434E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1106CA571F01A0FA00434E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1165BC731F06E42900460749 /* UIImage+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Blur.swift"; sourceTree = "<group>"; };
+		1165BC751F06E44200460749 /* BlurStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurStyle.swift; sourceTree = "<group>"; };
 		1177F5861F01C40000B572DC /* ChromaAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaAddButton.swift; sourceTree = "<group>"; };
 		1177F5871F01C40000B572DC /* ChromaColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaColorPicker.swift; sourceTree = "<group>"; };
 		1177F5881F01C40000B572DC /* ChromaHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaHandle.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 			children = (
 				1106CA4B1F01A0FA00434E58 /* AppDelegate.swift */,
 				1106CA4D1F01A0FA00434E58 /* ViewController.swift */,
+				1165BC751F06E44200460749 /* BlurStyle.swift */,
+				1165BC731F06E42900460749 /* UIImage+Blur.swift */,
 				1177F5851F01C40000B572DC /* ChromaColorPicker */,
 				119D68E71F01B71B00426D85 /* UIImageEffects */,
 				119D68E81F01B72400426D85 /* Supporting Files */,
@@ -187,6 +193,8 @@
 				1106CA4E1F01A0FA00434E58 /* ViewController.swift in Sources */,
 				1177F58E1F01C5A800B572DC /* ChromaShadeSlider.swift in Sources */,
 				1177F58C1F01C5A800B572DC /* ChromaColorPicker.swift in Sources */,
+				1165BC761F06E44200460749 /* BlurStyle.swift in Sources */,
+				1165BC741F06E42900460749 /* UIImage+Blur.swift in Sources */,
 				1106CA4C1F01A0FA00434E58 /* AppDelegate.swift in Sources */,
 				1177F58B1F01C5A800B572DC /* ChromaAddButton.swift in Sources */,
 				1177F58F1F01C5A800B572DC /* UIColor+Utilities.swift in Sources */,
