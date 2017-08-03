@@ -12,6 +12,7 @@
 		1106CA511F01A0FA00434E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA4F1F01A0FA00434E58 /* Main.storyboard */; };
 		1106CA531F01A0FA00434E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA521F01A0FA00434E58 /* Assets.xcassets */; };
 		1106CA561F01A0FA00434E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA541F01A0FA00434E58 /* LaunchScreen.storyboard */; };
+		116419061F32DC260031656A /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116419051F32DC260031656A /* AppVersion.swift */; };
 		1165BC741F06E42900460749 /* UIImage+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC731F06E42900460749 /* UIImage+Blur.swift */; };
 		1165BC761F06E44200460749 /* BlurStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC751F06E44200460749 /* BlurStyle.swift */; };
 		1177F58B1F01C5A800B572DC /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F5861F01C40000B572DC /* ChromaAddButton.swift */; };
@@ -19,7 +20,10 @@
 		1177F58D1F01C5A800B572DC /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F5881F01C40000B572DC /* ChromaHandle.swift */; };
 		1177F58E1F01C5A800B572DC /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F5891F01C40000B572DC /* ChromaShadeSlider.swift */; };
 		1177F58F1F01C5A800B572DC /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F58A1F01C40000B572DC /* UIColor+Utilities.swift */; };
+		11DF3FC31F32B2C5002C58E5 /* AcknowledgementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3FC21F32B2C5002C58E5 /* AcknowledgementViewController.swift */; };
+		11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */; };
 		11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */; };
+		11FAAF951F32B248007D212F /* Acknowledgement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11FAAF941F32B248007D212F /* Acknowledgement.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,7 @@
 		1106CA521F01A0FA00434E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1106CA551F01A0FA00434E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1106CA571F01A0FA00434E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		116419051F32DC260031656A /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		1165BC731F06E42900460749 /* UIImage+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Blur.swift"; sourceTree = "<group>"; };
 		1165BC751F06E44200460749 /* BlurStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurStyle.swift; sourceTree = "<group>"; };
 		1177F5861F01C40000B572DC /* ChromaAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaAddButton.swift; sourceTree = "<group>"; };
@@ -37,9 +42,12 @@
 		1177F5881F01C40000B572DC /* ChromaHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaHandle.swift; sourceTree = "<group>"; };
 		1177F5891F01C40000B572DC /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
 		1177F58A1F01C40000B572DC /* UIColor+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
+		11DF3FC21F32B2C5002C58E5 /* AcknowledgementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementViewController.swift; sourceTree = "<group>"; };
+		11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		11F5AA5B1F01A89100FC1522 /* Blurry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blurry-Bridging-Header.h"; sourceTree = "<group>"; };
 		11F5AA5C1F01A89200FC1522 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
 		11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		11FAAF941F32B248007D212F /* Acknowledgement.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Acknowledgement.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				1106CA4B1F01A0FA00434E58 /* AppDelegate.swift */,
-				1106CA4D1F01A0FA00434E58 /* ViewController.swift */,
-				1165BC751F06E44200460749 /* BlurStyle.swift */,
-				1165BC731F06E42900460749 /* UIImage+Blur.swift */,
+				11DF3FC71F32B3B9002C58E5 /* Model */,
+				11DF3FC61F32B3AE002C58E5 /* ViewControllers */,
 				1177F5851F01C40000B572DC /* ChromaColorPicker */,
 				119D68E71F01B71B00426D85 /* UIImageEffects */,
 				119D68E81F01B72400426D85 /* Supporting Files */,
@@ -110,11 +117,32 @@
 			isa = PBXGroup;
 			children = (
 				1106CA4F1F01A0FA00434E58 /* Main.storyboard */,
+				11FAAF941F32B248007D212F /* Acknowledgement.txt */,
 				1106CA521F01A0FA00434E58 /* Assets.xcassets */,
 				1106CA541F01A0FA00434E58 /* LaunchScreen.storyboard */,
 				1106CA571F01A0FA00434E58 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11DF3FC61F32B3AE002C58E5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1106CA4D1F01A0FA00434E58 /* ViewController.swift */,
+				11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */,
+				11DF3FC21F32B2C5002C58E5 /* AcknowledgementViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		11DF3FC71F32B3B9002C58E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				116419051F32DC260031656A /* AppVersion.swift */,
+				1165BC751F06E44200460749 /* BlurStyle.swift */,
+				1165BC731F06E42900460749 /* UIImage+Blur.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11FAAF951F32B248007D212F /* Acknowledgement.txt in Resources */,
 				1106CA561F01A0FA00434E58 /* LaunchScreen.storyboard in Resources */,
 				1106CA531F01A0FA00434E58 /* Assets.xcassets in Resources */,
 				1106CA511F01A0FA00434E58 /* Main.storyboard in Resources */,
@@ -190,8 +219,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */,
+				11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */,
+				11DF3FC31F32B2C5002C58E5 /* AcknowledgementViewController.swift in Sources */,
 				1106CA4E1F01A0FA00434E58 /* ViewController.swift in Sources */,
 				1177F58E1F01C5A800B572DC /* ChromaShadeSlider.swift in Sources */,
+				116419061F32DC260031656A /* AppVersion.swift in Sources */,
 				1177F58C1F01C5A800B572DC /* ChromaColorPicker.swift in Sources */,
 				1165BC761F06E44200460749 /* BlurStyle.swift in Sources */,
 				1165BC741F06E42900460749 /* UIImage+Blur.swift in Sources */,
