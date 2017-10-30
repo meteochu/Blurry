@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,10 +14,6 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Blurry" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,31 +109,29 @@
                         <color key="tintColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="HnR-ed-w8F" firstAttribute="trailing" secondItem="drE-TM-RUl" secondAttribute="trailing" id="2Zq-J5-VOU"/>
-                            <constraint firstItem="22o-Y0-4qa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5uy-MV-v4X"/>
-                            <constraint firstItem="tdC-jN-7rc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="633-eP-prh"/>
+                            <constraint firstItem="22o-Y0-4qa" firstAttribute="leading" secondItem="neN-S6-Cbo" secondAttribute="leading" id="5uy-MV-v4X"/>
+                            <constraint firstItem="tdC-jN-7rc" firstAttribute="top" secondItem="neN-S6-Cbo" secondAttribute="top" constant="32" id="633-eP-prh"/>
                             <constraint firstItem="drE-TM-RUl" firstAttribute="leading" secondItem="tdC-jN-7rc" secondAttribute="leading" id="78H-IP-O4D"/>
                             <constraint firstItem="tdC-jN-7rc" firstAttribute="centerX" secondItem="yfU-RD-aLd" secondAttribute="centerX" id="Abq-qX-B18"/>
                             <constraint firstItem="drE-TM-RUl" firstAttribute="trailing" secondItem="tdC-jN-7rc" secondAttribute="trailing" id="GF7-8A-fMQ"/>
                             <constraint firstItem="tdC-jN-7rc" firstAttribute="centerX" secondItem="G3u-PF-kKm" secondAttribute="centerX" id="KhS-tL-bxW"/>
                             <constraint firstItem="22o-Y0-4qa" firstAttribute="trailing" secondItem="uL6-05-nAH" secondAttribute="trailing" constant="20" id="La3-tx-uoG"/>
-                            <constraint firstItem="tdC-jN-7rc" firstAttribute="centerX" secondItem="drE-TM-RUl" secondAttribute="centerX" id="Mkq-ny-jbm"/>
                             <constraint firstItem="qeu-eQ-1md" firstAttribute="leading" secondItem="HnR-ed-w8F" secondAttribute="leading" id="Ol6-Zq-9yi"/>
                             <constraint firstItem="tdC-jN-7rc" firstAttribute="centerX" secondItem="22o-Y0-4qa" secondAttribute="centerX" id="Ots-jw-HkI"/>
                             <constraint firstItem="HnR-ed-w8F" firstAttribute="top" secondItem="drE-TM-RUl" secondAttribute="bottom" constant="32" id="PLJ-Zo-Ues"/>
                             <constraint firstItem="qeu-eQ-1md" firstAttribute="trailing" secondItem="HnR-ed-w8F" secondAttribute="trailing" id="RR8-ko-WRg"/>
-                            <constraint firstAttribute="trailing" secondItem="22o-Y0-4qa" secondAttribute="trailing" id="XNY-H8-ayh"/>
+                            <constraint firstItem="neN-S6-Cbo" firstAttribute="trailing" secondItem="22o-Y0-4qa" secondAttribute="trailing" id="XNY-H8-ayh"/>
                             <constraint firstItem="22o-Y0-4qa" firstAttribute="bottom" secondItem="uL6-05-nAH" secondAttribute="bottom" constant="20" id="bDd-Xq-f9Z"/>
-                            <constraint firstItem="tdC-jN-7rc" firstAttribute="centerX" secondItem="qeu-eQ-1md" secondAttribute="centerX" id="bTW-X6-ZPV"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="22o-Y0-4qa" secondAttribute="bottom" id="bhG-zn-Lj9"/>
+                            <constraint firstItem="22o-Y0-4qa" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="bhG-zn-Lj9"/>
                             <constraint firstItem="yfU-RD-aLd" firstAttribute="top" secondItem="qeu-eQ-1md" secondAttribute="bottom" constant="32" id="cQG-Lh-t5e"/>
                             <constraint firstItem="qeu-eQ-1md" firstAttribute="top" secondItem="HnR-ed-w8F" secondAttribute="bottom" constant="2" id="hw9-8d-coV"/>
-                            <constraint firstItem="22o-Y0-4qa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="jTX-UU-boW"/>
                             <constraint firstItem="drE-TM-RUl" firstAttribute="top" secondItem="tdC-jN-7rc" secondAttribute="bottom" constant="16" id="jaH-uQ-jp5"/>
                             <constraint firstItem="G3u-PF-kKm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="yfU-RD-aLd" secondAttribute="bottom" constant="16" id="mEk-j8-wmQ"/>
                             <constraint firstItem="HnR-ed-w8F" firstAttribute="leading" secondItem="drE-TM-RUl" secondAttribute="leading" id="nsq-sz-UZg"/>
-                            <constraint firstItem="tdC-jN-7rc" firstAttribute="centerX" secondItem="HnR-ed-w8F" secondAttribute="centerX" id="qIm-GE-wsD"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G3u-PF-kKm" secondAttribute="bottom" constant="64" id="rTW-qA-leg"/>
+                            <constraint firstItem="neN-S6-Cbo" firstAttribute="bottom" secondItem="G3u-PF-kKm" secondAttribute="bottom" constant="64" id="rTW-qA-leg"/>
+                            <constraint firstItem="22o-Y0-4qa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tKL-Xh-Wwb"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="neN-S6-Cbo"/>
                     </view>
                     <connections>
                         <outlet property="blurRadiusLabel" destination="HnR-ed-w8F" id="HKX-O6-WWs"/>
@@ -333,10 +328,6 @@
         <scene sceneID="Hl6-cx-hF3">
             <objects>
                 <viewController id="8SI-47-GrE" customClass="AcknowledgementViewController" customModule="Blurry" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bML-ol-5ZJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="Wff-9H-tjV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IDy-01-8so">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -351,11 +342,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KZC-EJ-VXG" firstAttribute="leading" secondItem="IDy-01-8so" secondAttribute="leading" constant="8" id="Prb-3T-Rtv"/>
-                            <constraint firstAttribute="trailing" secondItem="KZC-EJ-VXG" secondAttribute="trailing" constant="8" id="RZ6-Aw-3na"/>
-                            <constraint firstItem="KZC-EJ-VXG" firstAttribute="top" secondItem="bML-ol-5ZJ" secondAttribute="bottom" id="kpw-sV-ad1"/>
-                            <constraint firstItem="Wff-9H-tjV" firstAttribute="top" secondItem="KZC-EJ-VXG" secondAttribute="bottom" id="rRH-he-A6b"/>
+                            <constraint firstItem="KZC-EJ-VXG" firstAttribute="leading" secondItem="vo5-VL-ynl" secondAttribute="leading" constant="8" id="Prb-3T-Rtv"/>
+                            <constraint firstItem="vo5-VL-ynl" firstAttribute="trailing" secondItem="KZC-EJ-VXG" secondAttribute="trailing" constant="8" id="RZ6-Aw-3na"/>
+                            <constraint firstItem="KZC-EJ-VXG" firstAttribute="top" secondItem="vo5-VL-ynl" secondAttribute="top" id="kpw-sV-ad1"/>
+                            <constraint firstItem="vo5-VL-ynl" firstAttribute="bottom" secondItem="KZC-EJ-VXG" secondAttribute="bottom" id="rRH-he-A6b"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="vo5-VL-ynl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Acknowledgements" id="7Lr-rX-udK"/>
                     <connections>
@@ -371,7 +363,7 @@
             <objects>
                 <navigationController id="aFy-9D-RE3" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="TAE-A8-gNa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
