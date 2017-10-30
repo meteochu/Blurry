@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     // MARK: - image + blur properties
     
     /// the image loaded from Photos
-    private var originalImage: UIImage? {
+    fileprivate var originalImage: UIImage? {
         didSet {
             guard let _ = self.originalImage else { return }
             self.saveButton.isEnabled = true
@@ -36,14 +36,14 @@ class ViewController: UIViewController {
     }
     
     /// the blurred image that can be saved
-    private var blurredImage: UIImage? {
+    fileprivate var blurredImage: UIImage? {
         didSet {
             self.imageView.image = blurredImage
         }
     }
     
     /// the blur style, default .dark
-    private var blurStyle: BlurStyle = .dark {
+    fileprivate var blurStyle: BlurStyle = .dark {
         didSet {
             if case .tintColor = blurStyle {
                 self.colorPickerBackgroundView.isHidden = false
@@ -64,10 +64,10 @@ class ViewController: UIViewController {
     }
     
     /// the colour to tint the image, used with BlurStyle.tintColor(color)
-    private var currentColor: UIColor = UIColor.red.withAlphaComponent(0.35)
+    fileprivate var currentColor: UIColor = UIColor.red.withAlphaComponent(0.35)
     
     /// the color alpha to tint the image, used with BlurStyle.tintColor(color)
-    private var colorAlpha: CGFloat = 0.35
+    fileprivate var colorAlpha: CGFloat = 0.35
     
     /// flag to check whether the app is already processing another image
     private var isProcessingImage: Bool = false
