@@ -51,14 +51,18 @@ class ViewController: UIViewController {
         self.colorPicker.hexLabel.textColor = .white
         self.colorPicker.stroke = 6
         self.colorPicker.delegate = self
+        
         self.updateViewColors()
     }
     
     func updateViewColors() {
-        self.view.tintColor = blurry.blurStyle.tintColor
-        self.view.backgroundColor = blurry.blurStyle.backgroundColor
-        blurRadiusLabel.textColor = blurry.blurStyle.tintColor
-        opacityLabel.textColor = blurry.blurStyle.tintColor
+        let tintColor = blurry.blurStyle.tintColor
+        let backgroundColor = blurry.blurStyle.backgroundColor
+        self.view.backgroundColor = backgroundColor
+        self.view.tintColor = tintColor
+        blurRadiusLabel.textColor = tintColor
+        opacityLabel.textColor = tintColor
+        saveButton.layer.borderColor = tintColor.cgColor
     }
     
     // MARK: - IBAction methods
