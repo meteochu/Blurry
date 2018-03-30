@@ -114,6 +114,8 @@ class ViewController: UIViewController {
     
     @IBAction func didTapSaveButton(_ sender: UIButton) {
         let alertController = UIAlertController(title: "Processing Image...", message: nil, preferredStyle: .actionSheet)
+        alertController.popoverPresentationController?.sourceView = sender
+        alertController.popoverPresentationController?.sourceRect = sender.bounds
         self.present(alertController, animated: true) {
             if let image = self.blurry.applyBlur() {
                 alertController.dismiss(animated: true) {
