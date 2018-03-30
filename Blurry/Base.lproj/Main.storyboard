@@ -26,20 +26,17 @@
                                 <rect key="frame" x="16" y="52" width="343" height="394"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAf-dX-42c" customClass="ChromaColorPicker" customModule="Blurry" customModuleProvider="target">
-                                        <rect key="frame" x="12" y="12.333333333333314" width="319" height="319"/>
+                                        <rect key="frame" x="12" y="12.333333333333343" width="319" height="327.33333333333326"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="yAf-dX-42c" secondAttribute="height" id="GVe-KZ-maB"/>
-                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALPHA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrD-Kx-nug">
-                                        <rect key="frame" x="12" y="335.33333333333331" width="319" height="17"/>
+                                        <rect key="frame" x="12" y="343.66666666666669" width="319" height="17"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.34999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cob-xK-kGb">
-                                        <rect key="frame" x="10" y="351.66666666666669" width="323" height="39.333333333333314"/>
+                                        <rect key="frame" x="10" y="360" width="323" height="31"/>
                                         <connections>
                                             <action selector="alphaSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="sad-4Y-CrT"/>
                                         </connections>

@@ -55,9 +55,11 @@ class ViewController: UIViewController {
         self.updateViewColors()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    private var colorPickerDidLayout = false
+    
+    override func viewDidLayoutSubviews() {
         colorPicker.layout()
+        super.viewDidLayoutSubviews()
     }
     
     private func updateViewColors() {
