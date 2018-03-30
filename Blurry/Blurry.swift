@@ -80,10 +80,10 @@ class Blurry: NSObject {
     private func createWorkItem(for image: UIImage, blurStyle: BlurStyle, radius: CGFloat) -> DispatchWorkItem {
         return DispatchWorkItem {
             self.isProcessing = true
-            let start = Date()
+            let startTime = Date()
             let blurredImage = image.applying(style: blurStyle, with: radius)
-            let end = Date()
-            print("Time took to process image: \(end.timeIntervalSince(start))")
+            let length = -startTime.timeIntervalSinceNow.rounded(toPlaces: 4)
+            print("[Blurry] Time took to apply blur: \(length)s")
             self.completionBlock(blurredImage)
             self.isProcessing = false
             if let nextItem = self.nextWorkItem {
@@ -101,4 +101,14 @@ class Blurry: NSObject {
         return image.applying(style: blurStyle, with: blurRadius)
     }
 
+}
+
+extension Double {
+    
+    /// Rounds the double to decimal places value
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+    
 }
