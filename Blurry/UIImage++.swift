@@ -1,5 +1,5 @@
 //
-//  UIImage+Blur.swift
+//  UIImage++.swift
 //  Blurry
 //
 //  Created by Andy Liang on 6/30/17.
@@ -19,6 +19,14 @@ extension UIImage {
         case .tintColor(let color):
             return UIImageEffects.imageByApplyingBlur(to: self, withRadius: radius, tintColor: color,
                                                       saturationDeltaFactor: -1, maskImage: nil)
+        }
+    }
+    
+    func scaled(to newSize: CGSize) -> UIImage {
+        let renderFormat = UIGraphicsImageRendererFormat.default()
+        renderFormat.opaque = false
+        return UIGraphicsImageRenderer(size: CGSize(width: newSize.width, height: newSize.height), format: renderFormat).image { context in
+            self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         }
     }
     

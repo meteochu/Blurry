@@ -24,34 +24,40 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var colorPickerBackgroundView: UIView!
     
+    private lazy var blurry = Blurry(boundingSize: self.view.bounds.size) { image in
+        DispatchQueue.main.async {
+            self.blurredImage = image
+        }
+    }
+    
     // MARK: - image + blur properties
     
     /// the image loaded from Photos
-    fileprivate var originalImage: UIImage? {
+    private var originalImage: UIImage? {
         didSet {
-            guard let _ = self.originalImage else { return }
+            guard let image = self.originalImage else { return }
             self.saveButton.isEnabled = true
-            self.processImage()
+            blurry.currentImage = image
         }
     }
     
     /// the blurred image that can be saved
-    fileprivate var blurredImage: UIImage? {
+    private var blurredImage: UIImage? {
         didSet {
             self.imageView.image = blurredImage
         }
     }
     
     /// the blur style, default .dark
-    fileprivate var blurStyle: BlurStyle = .dark {
+    private var blurStyle: BlurStyle = .dark {
         didSet {
             if case .tintColor = blurStyle {
                 self.colorPickerBackgroundView.isHidden = false
             } else {
                 self.colorPickerBackgroundView.isHidden = true
             }
-            self.processImage()
             self.updateViewColors()
+            blurry.blurStyle = blurStyle
         }
     }
     
@@ -59,7 +65,7 @@ class ViewController: UIViewController {
     private var blurRadius: CGFloat = 60.0 {
         didSet {
             blurRadiusLabel.text = "Blur Radius (\(Int(blurRadius)))".uppercased()
-            self.processImage()
+            blurry.blurRadius = blurRadius
         }
     }
     
@@ -68,12 +74,6 @@ class ViewController: UIViewController {
     
     /// the color alpha to tint the image, used with BlurStyle.tintColor(color)
     fileprivate var colorAlpha: CGFloat = 0.35
-    
-    /// flag to check whether the app is already processing another image
-    private var isProcessingImage: Bool = false
-    
-    /// use dispatch items to queue up the next process after current image is blurred
-    private var nextDispatchItem: DispatchWorkItem?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -102,32 +102,6 @@ class ViewController: UIViewController {
     
     // MARK: - blur methods + its helpers
     
-    private func processImage(item: DispatchWorkItem? = nil) {
-        guard let image = self.originalImage else { return }
-        
-        if isProcessingImage {
-            self.nextDispatchItem = createWorkItem(for: image, radius: self.blurRadius)
-        } else {
-            let workItem = item ?? createWorkItem(for: image, radius: self.blurRadius)
-            DispatchQueue.global(qos: .background).async(execute: workItem)
-        }
-    }
-    
-    private func createWorkItem(for image: UIImage, radius: CGFloat) -> DispatchWorkItem {
-        return DispatchWorkItem { [weak self] in
-            self?.isProcessingImage = true
-            guard let blurStyle = self?.blurStyle else { return }
-            let blurredImage = image.applying(style: blurStyle, with: radius)
-            DispatchQueue.main.async { [weak self] in
-                self?.blurredImage = blurredImage
-                self?.isProcessingImage = false
-                if let item = self?.nextDispatchItem {
-                    self?.nextDispatchItem = nil
-                    self?.processImage(item: item)
-                }
-            }
-        }
-    }
     
     // MARK: - IBAction methods
     
@@ -139,7 +113,8 @@ class ViewController: UIViewController {
             self.blurStyle = .light
         case 2:
             self.blurStyle = .tintColor(currentColor)
-        default: return
+        default:
+            return
         }
     }
     
