@@ -55,7 +55,12 @@ class ViewController: UIViewController {
         self.updateViewColors()
     }
     
-    func updateViewColors() {
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        colorPicker.layout()
+    }
+    
+    private func updateViewColors() {
         let tintColor = blurry.blurStyle.tintColor
         let backgroundColor = blurry.blurStyle.backgroundColor
         self.view.backgroundColor = backgroundColor

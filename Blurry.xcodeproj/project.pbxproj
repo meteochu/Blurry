@@ -13,14 +13,15 @@
 		1106CA531F01A0FA00434E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA521F01A0FA00434E58 /* Assets.xcassets */; };
 		1106CA561F01A0FA00434E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA541F01A0FA00434E58 /* LaunchScreen.storyboard */; };
 		11376D56206DB294006E15BA /* Blurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11376D55206DB294006E15BA /* Blurry.swift */; };
+		114DEF59206E020300759B54 /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF53206E020300759B54 /* ChromaAddButton.swift */; };
+		114DEF5A206E020300759B54 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF54206E020300759B54 /* UIColor+Utilities.swift */; };
+		114DEF5B206E020300759B54 /* ChromaColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF55206E020300759B54 /* ChromaColorPicker.swift */; };
+		114DEF5C206E020300759B54 /* ColorModeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF56206E020300759B54 /* ColorModeToggleButton.swift */; };
+		114DEF5D206E020300759B54 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF57206E020300759B54 /* ChromaShadeSlider.swift */; };
+		114DEF5E206E020300759B54 /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF58206E020300759B54 /* ChromaHandle.swift */; };
 		116419061F32DC260031656A /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116419051F32DC260031656A /* AppVersion.swift */; };
 		1165BC741F06E42900460749 /* UIImage++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC731F06E42900460749 /* UIImage++.swift */; };
 		1165BC761F06E44200460749 /* BlurStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC751F06E44200460749 /* BlurStyle.swift */; };
-		1177F58B1F01C5A800B572DC /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F5861F01C40000B572DC /* ChromaAddButton.swift */; };
-		1177F58C1F01C5A800B572DC /* ChromaColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F5871F01C40000B572DC /* ChromaColorPicker.swift */; };
-		1177F58D1F01C5A800B572DC /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F5881F01C40000B572DC /* ChromaHandle.swift */; };
-		1177F58E1F01C5A800B572DC /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F5891F01C40000B572DC /* ChromaShadeSlider.swift */; };
-		1177F58F1F01C5A800B572DC /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1177F58A1F01C40000B572DC /* UIColor+Utilities.swift */; };
 		11B91EBC206DEF160070454D /* CGSize++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B91EBB206DEF160070454D /* CGSize++.swift */; };
 		11DF3FC31F32B2C5002C58E5 /* AcknowledgementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3FC21F32B2C5002C58E5 /* AcknowledgementViewController.swift */; };
 		11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */; };
@@ -37,14 +38,15 @@
 		1106CA551F01A0FA00434E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1106CA571F01A0FA00434E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11376D55206DB294006E15BA /* Blurry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blurry.swift; sourceTree = "<group>"; };
+		114DEF53206E020300759B54 /* ChromaAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaAddButton.swift; sourceTree = "<group>"; };
+		114DEF54206E020300759B54 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
+		114DEF55206E020300759B54 /* ChromaColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaColorPicker.swift; sourceTree = "<group>"; };
+		114DEF56206E020300759B54 /* ColorModeToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModeToggleButton.swift; sourceTree = "<group>"; };
+		114DEF57206E020300759B54 /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
+		114DEF58206E020300759B54 /* ChromaHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaHandle.swift; sourceTree = "<group>"; };
 		116419051F32DC260031656A /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		1165BC731F06E42900460749 /* UIImage++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage++.swift"; sourceTree = "<group>"; };
 		1165BC751F06E44200460749 /* BlurStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurStyle.swift; sourceTree = "<group>"; };
-		1177F5861F01C40000B572DC /* ChromaAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaAddButton.swift; sourceTree = "<group>"; };
-		1177F5871F01C40000B572DC /* ChromaColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaColorPicker.swift; sourceTree = "<group>"; };
-		1177F5881F01C40000B572DC /* ChromaHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaHandle.swift; sourceTree = "<group>"; };
-		1177F5891F01C40000B572DC /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
-		1177F58A1F01C40000B572DC /* UIColor+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
 		11B91EBB206DEF160070454D /* CGSize++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize++.swift"; sourceTree = "<group>"; };
 		11DF3FC21F32B2C5002C58E5 /* AcknowledgementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementViewController.swift; sourceTree = "<group>"; };
 		11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
@@ -97,11 +99,12 @@
 		1177F5851F01C40000B572DC /* ChromaColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				1177F5861F01C40000B572DC /* ChromaAddButton.swift */,
-				1177F5871F01C40000B572DC /* ChromaColorPicker.swift */,
-				1177F5881F01C40000B572DC /* ChromaHandle.swift */,
-				1177F5891F01C40000B572DC /* ChromaShadeSlider.swift */,
-				1177F58A1F01C40000B572DC /* UIColor+Utilities.swift */,
+				114DEF53206E020300759B54 /* ChromaAddButton.swift */,
+				114DEF55206E020300759B54 /* ChromaColorPicker.swift */,
+				114DEF58206E020300759B54 /* ChromaHandle.swift */,
+				114DEF57206E020300759B54 /* ChromaShadeSlider.swift */,
+				114DEF56206E020300759B54 /* ColorModeToggleButton.swift */,
+				114DEF54206E020300759B54 /* UIColor+Utilities.swift */,
 			);
 			name = ChromaColorPicker;
 			path = Blurry/ChromaColorPicker;
@@ -226,19 +229,20 @@
 			files = (
 				11B91EBC206DEF160070454D /* CGSize++.swift in Sources */,
 				11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */,
+				114DEF5A206E020300759B54 /* UIColor+Utilities.swift in Sources */,
+				114DEF5E206E020300759B54 /* ChromaHandle.swift in Sources */,
 				11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */,
+				114DEF5C206E020300759B54 /* ColorModeToggleButton.swift in Sources */,
 				11DF3FC31F32B2C5002C58E5 /* AcknowledgementViewController.swift in Sources */,
 				1106CA4E1F01A0FA00434E58 /* ViewController.swift in Sources */,
-				1177F58E1F01C5A800B572DC /* ChromaShadeSlider.swift in Sources */,
 				116419061F32DC260031656A /* AppVersion.swift in Sources */,
-				1177F58C1F01C5A800B572DC /* ChromaColorPicker.swift in Sources */,
 				1165BC761F06E44200460749 /* BlurStyle.swift in Sources */,
+				114DEF5D206E020300759B54 /* ChromaShadeSlider.swift in Sources */,
 				1165BC741F06E42900460749 /* UIImage++.swift in Sources */,
 				1106CA4C1F01A0FA00434E58 /* AppDelegate.swift in Sources */,
-				1177F58B1F01C5A800B572DC /* ChromaAddButton.swift in Sources */,
 				11376D56206DB294006E15BA /* Blurry.swift in Sources */,
-				1177F58F1F01C5A800B572DC /* UIColor+Utilities.swift in Sources */,
-				1177F58D1F01C5A800B572DC /* ChromaHandle.swift in Sources */,
+				114DEF5B206E020300759B54 /* ChromaColorPicker.swift in Sources */,
+				114DEF59206E020300759B54 /* ChromaAddButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
