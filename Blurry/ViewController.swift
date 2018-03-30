@@ -26,54 +26,15 @@ class ViewController: UIViewController {
     
     private lazy var blurry = Blurry(boundingSize: self.view.bounds.size) { image in
         DispatchQueue.main.async {
-            self.blurredImage = image
-        }
-    }
-    
-    // MARK: - image + blur properties
-    
-    /// the image loaded from Photos
-    private var originalImage: UIImage? {
-        didSet {
-            guard let image = self.originalImage else { return }
-            self.saveButton.isEnabled = true
-            blurry.currentImage = image
-        }
-    }
-    
-    /// the blurred image that can be saved
-    private var blurredImage: UIImage? {
-        didSet {
-            self.imageView.image = blurredImage
-        }
-    }
-    
-    /// the blur style, default .dark
-    private var blurStyle: BlurStyle = .dark {
-        didSet {
-            if case .tintColor = blurStyle {
-                self.colorPickerBackgroundView.isHidden = false
-            } else {
-                self.colorPickerBackgroundView.isHidden = true
-            }
-            self.updateViewColors()
-            blurry.blurStyle = blurStyle
-        }
-    }
-    
-    /// the radius to blur the image by
-    private var blurRadius: CGFloat = 60.0 {
-        didSet {
-            blurRadiusLabel.text = "Blur Radius (\(Int(blurRadius)))".uppercased()
-            blurry.blurRadius = blurRadius
+            self.imageView.image = image
         }
     }
     
     /// the colour to tint the image, used with BlurStyle.tintColor(color)
-    fileprivate var currentColor: UIColor = UIColor.red.withAlphaComponent(0.35)
+    private var currentColor: UIColor = UIColor.red.withAlphaComponent(0.35)
     
     /// the color alpha to tint the image, used with BlurStyle.tintColor(color)
-    fileprivate var colorAlpha: CGFloat = 0.35
+    private var colorAlpha: CGFloat = 0.35
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -94,43 +55,45 @@ class ViewController: UIViewController {
     }
     
     func updateViewColors() {
-        self.view.tintColor = self.blurStyle.tintColor
-        self.view.backgroundColor = self.blurStyle.backgroundColor
-        blurRadiusLabel.textColor = self.blurStyle.tintColor
-        opacityLabel.textColor = self.blurStyle.tintColor
+        self.view.tintColor = blurry.blurStyle.tintColor
+        self.view.backgroundColor = blurry.blurStyle.backgroundColor
+        blurRadiusLabel.textColor = blurry.blurStyle.tintColor
+        opacityLabel.textColor = blurry.blurStyle.tintColor
     }
-    
-    // MARK: - blur methods + its helpers
-    
     
     // MARK: - IBAction methods
     
     @IBAction func blurModeButtonChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            self.blurStyle = .dark
+            blurry.blurStyle = .dark
+            self.colorPickerBackgroundView.isHidden = true
         case 1:
-            self.blurStyle = .light
+            blurry.blurStyle = .light
+            self.colorPickerBackgroundView.isHidden = true
         case 2:
-            self.blurStyle = .tintColor(currentColor)
+            blurry.blurStyle = .tintColor(currentColor)
+            self.colorPickerBackgroundView.isHidden = false
         default:
-            return
+            break
         }
+        self.updateViewColors()
     }
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         let value = CGFloat(Int(sender.value))
         // only re-blur image if there's a diff
-        if abs(value - blurRadius) >= 1 {
-            self.blurRadius = value
+        if abs(value - blurry.blurRadius) >= 1 {
+            blurRadiusLabel.text = "Blur Radius (\(Int(value)))".uppercased()
+            blurry.blurRadius = value
         }
     }
     
     @IBAction func alphaSliderValueChanged(_ sender: UISlider) {
         let newAlpha = CGFloat(sender.value)
-        if case .tintColor(let color) = self.blurStyle, abs(newAlpha - colorAlpha) >= 0.05 {
+        if case .tintColor(let color) = blurry.blurStyle, abs(newAlpha - colorAlpha) >= 0.05 {
             // avoid spamming blur, only re-blur image if the alpha has 0.05+ changes
-            self.blurStyle = .tintColor(color.withAlphaComponent(newAlpha))
+            blurry.blurStyle = .tintColor(color.withAlphaComponent(newAlpha))
             self.colorAlpha = newAlpha
         }
     }
@@ -146,12 +109,24 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapSaveButton(_ sender: UIButton) {
-        guard let image = self.blurredImage else { return }
-        let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: [])
-        shareSheet.modalPresentationStyle = .popover
-        shareSheet.popoverPresentationController?.sourceView = sender
-        shareSheet.popoverPresentationController?.sourceRect = sender.bounds
-        self.present(shareSheet, animated: true, completion: nil)
+        let alertController = UIAlertController(title: "Processing Image...", message: nil, preferredStyle: .actionSheet)
+        self.present(alertController, animated: true) {
+            if let image = self.blurry.applyBlur() {
+                alertController.dismiss(animated: true) {
+                    let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: [])
+                    shareSheet.modalPresentationStyle = .popover
+                    shareSheet.popoverPresentationController?.sourceView = sender
+                    shareSheet.popoverPresentationController?.sourceRect = sender.bounds
+                    self.present(shareSheet, animated: true, completion: nil)
+                }
+            } else {
+                alertController.dismiss(animated: true) {
+                    let failedAlert = UIAlertController(title: "Save Failed...", message: "There was no source photo...", preferredStyle: .alert)
+                    failedAlert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+                    self.present(failedAlert, animated: true, completion: nil)
+                }
+            }
+        }
     }
 }
 
@@ -168,7 +143,8 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
             return
         }
-        self.originalImage = image
+        self.saveButton.isEnabled = true
+        blurry.currentImage = image
     }
     
 }
@@ -178,7 +154,8 @@ extension ViewController: ChromaColorPickerDelegate {
     
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
         self.currentColor = color.withAlphaComponent(colorAlpha)
-        self.blurStyle = .tintColor(currentColor)
+        blurry.blurStyle = .tintColor(currentColor)
+        self.updateViewColors()
     }
     
 }
