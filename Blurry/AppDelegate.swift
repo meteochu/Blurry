@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication,
-                   didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-	let attributes: [NSAttributedStringKey: Any] = [
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+	let attributes: [NSAttributedString.Key: Any] = [
 		.font: UIFont.systemFont(ofSize: 12, weight: .bold),
 		.kern: 2.0
 	]

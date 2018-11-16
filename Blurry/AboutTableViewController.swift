@@ -42,7 +42,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
                 composeView.mailComposeDelegate = self
                 self.present(composeView, animated: true, completion: nil)
             } else {
-                let controller = UIAlertController(title: "No Mail Client", message: "It seems like you do not have the system mail app. You can stil contact support by emailing blurry@andyliang.me", preferredStyle: .alert)
+                let controller = UIAlertController(title: "Mail Unavailable", message: "It seems like you either do not have the system mail app or have not set up any accounts in it. You can stil contact support by emailing blurry@andyliang.me", preferredStyle: .alert)
                 controller.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
                 self.present(controller, animated: true, completion: nil)
             }

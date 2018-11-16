@@ -151,9 +151,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+        guard let image = info[.originalImage] as? UIImage else {
             return
         }
         self.saveButton.isEnabled = true
