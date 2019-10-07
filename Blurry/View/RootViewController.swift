@@ -113,6 +113,9 @@ class RootViewController : UIViewController {
             infoButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -16)
         ])
         updateUI()
+
+        // suppport dropping images
+        view.addInteraction(UIDropInteraction(delegate: self))
     }
 
     @objc private func blurModeDidChange(_ segmentedControl: UISegmentedControl) {
@@ -196,6 +199,30 @@ class RootViewController : UIViewController {
                 failedAlert.addAction(cancelAction)
                 self.present(failedAlert, animated: true, completion: nil)
             }
+        }
+    }
+}
+
+extension RootViewController : UIDropInteractionDelegate {
+
+    func dropInteraction(
+        _ interaction: UIDropInteraction,
+        sessionDidUpdate session: UIDropSession
+    ) -> UIDropProposal {
+        return UIDropProposal(operation: .copy)
+    }
+
+    func dropInteraction(
+        _ interaction: UIDropInteraction,
+        canHandle session: UIDropSession
+    ) -> Bool {
+        return session.canLoadObjects(ofClass: UIImage.self)
+    }
+
+    func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
+        session.loadObjects(ofClass: UIImage.self) { images in
+            guard let image = images.first as? UIImage else { return }
+            self.blurry.currentImage = image
         }
     }
 }
