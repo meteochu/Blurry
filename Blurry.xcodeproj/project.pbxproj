@@ -13,12 +13,6 @@
 		1106CA531F01A0FA00434E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA521F01A0FA00434E58 /* Assets.xcassets */; };
 		1106CA561F01A0FA00434E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA541F01A0FA00434E58 /* LaunchScreen.storyboard */; };
 		11376D56206DB294006E15BA /* Blurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11376D55206DB294006E15BA /* Blurry.swift */; };
-		114DEF59206E020300759B54 /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF53206E020300759B54 /* ChromaAddButton.swift */; };
-		114DEF5A206E020300759B54 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF54206E020300759B54 /* UIColor+Utilities.swift */; };
-		114DEF5B206E020300759B54 /* ChromaColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF55206E020300759B54 /* ChromaColorPicker.swift */; };
-		114DEF5C206E020300759B54 /* ColorModeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF56206E020300759B54 /* ColorModeToggleButton.swift */; };
-		114DEF5D206E020300759B54 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF57206E020300759B54 /* ChromaShadeSlider.swift */; };
-		114DEF5E206E020300759B54 /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114DEF58206E020300759B54 /* ChromaHandle.swift */; };
 		116419061F32DC260031656A /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116419051F32DC260031656A /* AppVersion.swift */; };
 		1165BC741F06E42900460749 /* UIImage++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC731F06E42900460749 /* UIImage++.swift */; };
 		1165BC761F06E44200460749 /* BlurStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC751F06E44200460749 /* BlurStyle.swift */; };
@@ -27,6 +21,8 @@
 		11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */; };
 		11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */; };
 		11FAAF951F32B248007D212F /* Acknowledgement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11FAAF941F32B248007D212F /* Acknowledgement.txt */; };
+		5FDF854876074FAC6AEB0096 /* Pods_Blurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */; };
+		A1B4F70E234ADB76004203BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70D234ADB76004203BB /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +34,6 @@
 		1106CA551F01A0FA00434E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1106CA571F01A0FA00434E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11376D55206DB294006E15BA /* Blurry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blurry.swift; sourceTree = "<group>"; };
-		114DEF53206E020300759B54 /* ChromaAddButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaAddButton.swift; sourceTree = "<group>"; };
-		114DEF54206E020300759B54 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utilities.swift"; sourceTree = "<group>"; };
-		114DEF55206E020300759B54 /* ChromaColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaColorPicker.swift; sourceTree = "<group>"; };
-		114DEF56206E020300759B54 /* ColorModeToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModeToggleButton.swift; sourceTree = "<group>"; };
-		114DEF57206E020300759B54 /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaShadeSlider.swift; sourceTree = "<group>"; };
-		114DEF58206E020300759B54 /* ChromaHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromaHandle.swift; sourceTree = "<group>"; };
 		116419051F32DC260031656A /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		1165BC731F06E42900460749 /* UIImage++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage++.swift"; sourceTree = "<group>"; };
 		1165BC751F06E44200460749 /* BlurStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurStyle.swift; sourceTree = "<group>"; };
@@ -54,6 +44,10 @@
 		11F5AA5C1F01A89200FC1522 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
 		11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		11FAAF941F32B248007D212F /* Acknowledgement.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Acknowledgement.txt; sourceTree = "<group>"; };
+		81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blurry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B4F70D234ADB76004203BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE354B4331EC79CCA9DF7664 /* Pods-Blurry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.release.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.release.xcconfig"; sourceTree = "<group>"; };
+		D45DDB810E75DB286B730FF7 /* Pods-Blurry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.debug.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FDF854876074FAC6AEB0096 /* Pods_Blurry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +67,8 @@
 			children = (
 				1106CA4A1F01A0FA00434E58 /* Blurry */,
 				1106CA491F01A0FA00434E58 /* Products */,
+				E82980E9E419390F3ABD25A6 /* Pods */,
+				C9406525A2E46135FE75D25F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,28 +84,14 @@
 			isa = PBXGroup;
 			children = (
 				1106CA4B1F01A0FA00434E58 /* AppDelegate.swift */,
+				A1B4F70D234ADB76004203BB /* SceneDelegate.swift */,
 				11DF3FC71F32B3B9002C58E5 /* Model */,
 				11DF3FC61F32B3AE002C58E5 /* ViewControllers */,
-				1177F5851F01C40000B572DC /* ChromaColorPicker */,
 				119D68E71F01B71B00426D85 /* UIImageEffects */,
 				119D68E81F01B72400426D85 /* Supporting Files */,
 			);
 			path = Blurry;
 			sourceTree = "<group>";
-		};
-		1177F5851F01C40000B572DC /* ChromaColorPicker */ = {
-			isa = PBXGroup;
-			children = (
-				114DEF53206E020300759B54 /* ChromaAddButton.swift */,
-				114DEF55206E020300759B54 /* ChromaColorPicker.swift */,
-				114DEF58206E020300759B54 /* ChromaHandle.swift */,
-				114DEF57206E020300759B54 /* ChromaShadeSlider.swift */,
-				114DEF56206E020300759B54 /* ColorModeToggleButton.swift */,
-				114DEF54206E020300759B54 /* UIColor+Utilities.swift */,
-			);
-			name = ChromaColorPicker;
-			path = Blurry/ChromaColorPicker;
-			sourceTree = SOURCE_ROOT;
 		};
 		119D68E71F01B71B00426D85 /* UIImageEffects */ = {
 			isa = PBXGroup;
@@ -154,6 +137,23 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		C9406525A2E46135FE75D25F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E82980E9E419390F3ABD25A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D45DDB810E75DB286B730FF7 /* Pods-Blurry.debug.xcconfig */,
+				CE354B4331EC79CCA9DF7664 /* Pods-Blurry.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,9 +161,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1106CA701F01A0FA00434E58 /* Build configuration list for PBXNativeTarget "Blurry" */;
 			buildPhases = (
+				28259E3B5C043F02F311B5FE /* [CP] Check Pods Manifest.lock */,
 				1106CA441F01A0FA00434E58 /* Sources */,
 				1106CA451F01A0FA00434E58 /* Frameworks */,
 				1106CA461F01A0FA00434E58 /* Resources */,
+				FD0E38EB25D0F0DE9A529F8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,6 +224,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		28259E3B5C043F02F311B5FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Blurry-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD0E38EB25D0F0DE9A529F8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Blurry/Pods-Blurry-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Blurry/Pods-Blurry-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1106CA441F01A0FA00434E58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -229,20 +274,15 @@
 			files = (
 				11B91EBC206DEF160070454D /* CGSize++.swift in Sources */,
 				11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */,
-				114DEF5A206E020300759B54 /* UIColor+Utilities.swift in Sources */,
-				114DEF5E206E020300759B54 /* ChromaHandle.swift in Sources */,
 				11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */,
-				114DEF5C206E020300759B54 /* ColorModeToggleButton.swift in Sources */,
 				11DF3FC31F32B2C5002C58E5 /* AcknowledgementViewController.swift in Sources */,
 				1106CA4E1F01A0FA00434E58 /* ViewController.swift in Sources */,
 				116419061F32DC260031656A /* AppVersion.swift in Sources */,
 				1165BC761F06E44200460749 /* BlurStyle.swift in Sources */,
-				114DEF5D206E020300759B54 /* ChromaShadeSlider.swift in Sources */,
+				A1B4F70E234ADB76004203BB /* SceneDelegate.swift in Sources */,
 				1165BC741F06E42900460749 /* UIImage++.swift in Sources */,
 				1106CA4C1F01A0FA00434E58 /* AppDelegate.swift in Sources */,
 				11376D56206DB294006E15BA /* Blurry.swift in Sources */,
-				114DEF5B206E020300759B54 /* ChromaColorPicker.swift in Sources */,
-				114DEF59206E020300759B54 /* ChromaAddButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +422,7 @@
 		};
 		1106CA711F01A0FA00434E58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D45DDB810E75DB286B730FF7 /* Pods-Blurry.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -400,6 +441,7 @@
 		};
 		1106CA721F01A0FA00434E58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE354B4331EC79CCA9DF7664 /* Pods-Blurry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
