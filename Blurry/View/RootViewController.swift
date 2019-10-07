@@ -47,14 +47,7 @@ class RootViewController : UIViewController {
         let blurModePicker = UISegmentedControl(items: BlurStyle.allTitles)
         blurModePicker.selectedSegmentIndex = 0
         blurModePicker.addTarget(self, action: #selector(blurModeDidChange), for: .valueChanged)
-        blurModePicker.setTitleTextAttributes([
-            .font: UIFont.systemFont(ofSize: 12, weight: .bold),
-            .kern: 2.0
-        ], for: .normal)
-        if #available(iOS 13.0, *) {
-            blurModePicker.tintColor = view.tintColor
-            blurModePicker.selectedSegmentTintColor = view.tintColor
-        }
+        blurModePicker.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
 
         blurRadiusLabel.font = .preferredFont(forTextStyle: .headline)
         blurRadiusLabel.text = "Blur Radius"
@@ -114,7 +107,6 @@ class RootViewController : UIViewController {
     }
 
     @objc private func blurModeDidChange(_ segmentedControl: UISegmentedControl) {
-
         switch segmentedControl.selectedSegmentIndex {
         case 0: // dark
             blurry.blurStyle = .dark
@@ -125,6 +117,7 @@ class RootViewController : UIViewController {
         default:
             break
         }
+        segmentedControl.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
         colorPickerView.isHidden = !blurry.blurStyle.shouldDisplayPicker
         updateUI()
     }

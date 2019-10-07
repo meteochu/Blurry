@@ -142,8 +142,8 @@
 		A1B4F713234AE2B0004203BB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A1B4F70F234ADD4B004203BB /* RootViewController.swift */,
 				A1B4F711234AE261004203BB /* ColorPickerView.swift */,
+				A1B4F70F234ADD4B004203BB /* RootViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
