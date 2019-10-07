@@ -12,12 +12,9 @@
 		1106CA531F01A0FA00434E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA521F01A0FA00434E58 /* Assets.xcassets */; };
 		1106CA561F01A0FA00434E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA541F01A0FA00434E58 /* LaunchScreen.storyboard */; };
 		11376D56206DB294006E15BA /* Blurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11376D55206DB294006E15BA /* Blurry.swift */; };
-		116419061F32DC260031656A /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116419051F32DC260031656A /* AppVersion.swift */; };
 		1165BC741F06E42900460749 /* UIImage++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC731F06E42900460749 /* UIImage++.swift */; };
 		1165BC761F06E44200460749 /* BlurStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC751F06E44200460749 /* BlurStyle.swift */; };
 		11B91EBC206DEF160070454D /* CGSize++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B91EBB206DEF160070454D /* CGSize++.swift */; };
-		11DF3FC31F32B2C5002C58E5 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3FC21F32B2C5002C58E5 /* AcknowledgementsViewController.swift */; };
-		11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */; };
 		11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */; };
 		11FAAF951F32B248007D212F /* Acknowledgement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11FAAF941F32B248007D212F /* Acknowledgement.txt */; };
 		5FDF854876074FAC6AEB0096 /* Pods_Blurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */; };
@@ -39,12 +36,9 @@
 		1106CA551F01A0FA00434E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1106CA571F01A0FA00434E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11376D55206DB294006E15BA /* Blurry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blurry.swift; sourceTree = "<group>"; };
-		116419051F32DC260031656A /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 		1165BC731F06E42900460749 /* UIImage++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage++.swift"; sourceTree = "<group>"; };
 		1165BC751F06E44200460749 /* BlurStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurStyle.swift; sourceTree = "<group>"; };
 		11B91EBB206DEF160070454D /* CGSize++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize++.swift"; sourceTree = "<group>"; };
-		11DF3FC21F32B2C5002C58E5 /* AcknowledgementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsViewController.swift; sourceTree = "<group>"; };
-		11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		11F5AA5B1F01A89100FC1522 /* Blurry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blurry-Bridging-Header.h"; sourceTree = "<group>"; };
 		11F5AA5C1F01A89200FC1522 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
 		11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
@@ -100,7 +94,6 @@
 				A1B4F713234AE2B0004203BB /* View */,
 				A1B4F714234AEB3F004203BB /* Model */,
 				A1B4F717234AF830004203BB /* Extensions */,
-				11DF3FC71F32B3B9002C58E5 /* Model */,
 				11DF3FC61F32B3AE002C58E5 /* ViewControllers */,
 				119D68E71F01B71B00426D85 /* UIImageEffects */,
 				119D68E81F01B72400426D85 /* Supporting Files */,
@@ -133,18 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				1106CA4F1F01A0FA00434E58 /* Main.storyboard */,
-				11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */,
-				11DF3FC21F32B2C5002C58E5 /* AcknowledgementsViewController.swift */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		11DF3FC71F32B3B9002C58E5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				116419051F32DC260031656A /* AppVersion.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		A1B4F713234AE2B0004203BB /* View */ = {
@@ -319,9 +302,6 @@
 				11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */,
 				A1B4F710234ADD4B004203BB /* RootViewController.swift in Sources */,
 				A1B4F71F234B07A7004203BB /* AcknowledgementViewController.swift in Sources */,
-				11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */,
-				11DF3FC31F32B2C5002C58E5 /* AcknowledgementsViewController.swift in Sources */,
-				116419061F32DC260031656A /* AppVersion.swift in Sources */,
 				A1B4F71B234B0011004203BB /* AboutItemCell.swift in Sources */,
 				1165BC761F06E44200460749 /* BlurStyle.swift in Sources */,
 				A1B4F71D234B027E004203BB /* Bundle++.swift in Sources */,
