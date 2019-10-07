@@ -50,6 +50,7 @@
 		A1B4F71A234B0011004203BB /* AboutItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutItemCell.swift; sourceTree = "<group>"; };
 		A1B4F71C234B027E004203BB /* Bundle++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle++.swift"; sourceTree = "<group>"; };
 		A1B4F71E234B07A7004203BB /* AcknowledgementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementViewController.swift; sourceTree = "<group>"; };
+		A1CB720B234BC0CB00654734 /* Blurry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blurry.entitlements; sourceTree = "<group>"; };
 		CE354B4331EC79CCA9DF7664 /* Pods-Blurry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.release.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.release.xcconfig"; sourceTree = "<group>"; };
 		D45DDB810E75DB286B730FF7 /* Pods-Blurry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.debug.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +88,7 @@
 		1106CA4A1F01A0FA00434E58 /* Blurry */ = {
 			isa = PBXGroup;
 			children = (
+				A1CB720B234BC0CB00654734 /* Blurry.entitlements */,
 				1106CA4B1F01A0FA00434E58 /* AppDelegate.swift */,
 				A1B4F70D234ADB76004203BB /* SceneDelegate.swift */,
 				A1B4F713234AE2B0004203BB /* View */,
@@ -202,7 +204,7 @@
 				TargetAttributes = {
 					1106CA471F01A0FA00434E58 = {
 						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -434,7 +436,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Blurry/Blurry.entitlements;
 				CURRENT_PROJECT_VERSION = 9;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = TSCXJ4KWQ4;
 				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -442,9 +446,10 @@
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andyliang.Blurry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Blurry/UIImageEffects/Blurry-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -455,7 +460,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Blurry/Blurry.entitlements;
 				CURRENT_PROJECT_VERSION = 9;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = TSCXJ4KWQ4;
 				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
@@ -463,8 +470,9 @@
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andyliang.Blurry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Blurry/UIImageEffects/Blurry-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
