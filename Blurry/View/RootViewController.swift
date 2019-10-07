@@ -76,9 +76,13 @@ class RootViewController : UIViewController {
         contentView.spacing = 12
         contentView.setCustomSpacing(4, after: blurRadiusLabel)
 
+        let infoButton = UIButton(type: .detailDisclosure)
+        infoButton.addTarget(self, action: #selector(didTapInfoButton), for: .touchUpInside)
+
         view.addSubviewWithAutoLayout(imageView)
         view.addSubviewWithAutoLayout(colorPickerView)
         view.addSubviewWithAutoLayout(contentView)
+        view.addSubviewWithAutoLayout(infoButton)
 
         let guide = view.layoutMarginsGuide
         let safeAreaGuide = view.safeAreaLayoutGuide
@@ -100,7 +104,10 @@ class RootViewController : UIViewController {
             contentView.leadingAnchor.constraint(equalTo: colorPickerView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: colorPickerView.trailingAnchor),
             contentView.bottomAnchor.constraint(
-                lessThanOrEqualTo: safeAreaGuide.bottomAnchor, constant: -8)
+                lessThanOrEqualTo: safeAreaGuide.bottomAnchor, constant: -8),
+            // 4. info button
+            infoButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -16),
+            infoButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -16)
         ])
 
         updateUI()
@@ -145,6 +152,11 @@ class RootViewController : UIViewController {
         guard abs(newValue - blurry.blurRadius) >= 1 else { return }
         blurRadiusLabel.text = "Blur Radius (\(Int(newValue)))"
         blurry.blurRadius = newValue
+    }
+
+    @objc private func didTapInfoButton() {
+       let viewController = UINavigationController(rootViewController: AboutViewController())
+        present(viewController, animated: true, completion: nil)
     }
 
     private func updateUI() {
