@@ -48,9 +48,12 @@ class RootViewController : UIViewController {
         blurModePicker.selectedSegmentIndex = 0
         blurModePicker.addTarget(self, action: #selector(blurModeDidChange), for: .valueChanged)
         blurModePicker.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
-
+        if #available(iOS 13.0, *) {
+            blurModePicker.selectedSegmentTintColor = UIColor(white: 1.0, alpha: 0.25)
+        }
+        
         blurRadiusLabel.font = .preferredFont(forTextStyle: .headline)
-        blurRadiusLabel.text = "Blur Radius"
+        blurRadiusLabel.text = "Blur Radius (60)"
 
         let radiusSlider = UISlider()
         radiusSlider.isContinuous = true
@@ -109,7 +112,6 @@ class RootViewController : UIViewController {
             infoButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -16),
             infoButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -16)
         ])
-
         updateUI()
     }
 
@@ -165,8 +167,11 @@ class RootViewController : UIViewController {
         view.tintColor = tintColor
         blurRadiusLabel.textColor = tintColor
         colorPickerView.alphaLabel.textColor = tintColor
-        saveButton.setTitleColor(tintColor, for: .normal)
         browseButton.setTitleColor(tintColor, for: .normal)
+        browseButton.setTitleColor(tintColor.withAlphaComponent(0.5), for: .highlighted)
+        saveButton.setTitleColor(tintColor, for: .normal)
+        saveButton.setTitleColor(tintColor.withAlphaComponent(0.5), for: .highlighted)
+        saveButton.setTitleColor(tintColor.withAlphaComponent(0.35), for: .disabled)
         setNeedsStatusBarAppearanceUpdate()
     }
 
