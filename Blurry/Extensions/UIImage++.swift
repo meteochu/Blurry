@@ -9,7 +9,6 @@
 import UIKit
 
 extension UIImage {
-    
     func applying(style: BlurStyle, with radius: CGFloat) -> UIImage {
         switch style {
         case .dark:
@@ -17,17 +16,16 @@ extension UIImage {
         case .light:
             return  UIImageEffects.imageByApplyingLightEffect(to: self, withRadius: radius)
         case .tintColor(let color):
-            return UIImageEffects.imageByApplyingBlur(to: self, withRadius: radius, tintColor: color,
-                                                      saturationDeltaFactor: -1, maskImage: nil)
+            return UIImageEffects.imageByApplyingBlur(
+                to: self, withRadius: radius, tintColor: color, saturationDeltaFactor: -1, maskImage: nil)
         }
     }
     
     func scaled(to newSize: CGSize) -> UIImage {
         let renderFormat = UIGraphicsImageRendererFormat.default()
         renderFormat.opaque = false
-        return UIGraphicsImageRenderer(size: CGSize(width: newSize.width, height: newSize.height), format: renderFormat).image { context in
+        return UIGraphicsImageRenderer(size: newSize, format: renderFormat).image { context in
             self.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         }
     }
-    
 }

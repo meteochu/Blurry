@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1106CA4C1F01A0FA00434E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106CA4B1F01A0FA00434E58 /* AppDelegate.swift */; };
-		1106CA4E1F01A0FA00434E58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106CA4D1F01A0FA00434E58 /* ViewController.swift */; };
 		1106CA511F01A0FA00434E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA4F1F01A0FA00434E58 /* Main.storyboard */; };
 		1106CA531F01A0FA00434E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA521F01A0FA00434E58 /* Assets.xcassets */; };
 		1106CA561F01A0FA00434E58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA541F01A0FA00434E58 /* LaunchScreen.storyboard */; };
@@ -23,12 +22,14 @@
 		11FAAF951F32B248007D212F /* Acknowledgement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11FAAF941F32B248007D212F /* Acknowledgement.txt */; };
 		5FDF854876074FAC6AEB0096 /* Pods_Blurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */; };
 		A1B4F70E234ADB76004203BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70D234ADB76004203BB /* SceneDelegate.swift */; };
+		A1B4F710234ADD4B004203BB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70F234ADD4B004203BB /* RootViewController.swift */; };
+		A1B4F712234AE261004203BB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F711234AE261004203BB /* ColorPickerView.swift */; };
+		A1B4F716234AF641004203BB /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F715234AF641004203BB /* UIView++.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1106CA481F01A0FA00434E58 /* Blurry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blurry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1106CA4B1F01A0FA00434E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1106CA4D1F01A0FA00434E58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1106CA501F01A0FA00434E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1106CA521F01A0FA00434E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1106CA551F01A0FA00434E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +47,9 @@
 		11FAAF941F32B248007D212F /* Acknowledgement.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Acknowledgement.txt; sourceTree = "<group>"; };
 		81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blurry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B4F70D234ADB76004203BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A1B4F70F234ADD4B004203BB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		A1B4F711234AE261004203BB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		A1B4F715234AF641004203BB /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
 		CE354B4331EC79CCA9DF7664 /* Pods-Blurry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.release.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.release.xcconfig"; sourceTree = "<group>"; };
 		D45DDB810E75DB286B730FF7 /* Pods-Blurry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.debug.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +89,9 @@
 			children = (
 				1106CA4B1F01A0FA00434E58 /* AppDelegate.swift */,
 				A1B4F70D234ADB76004203BB /* SceneDelegate.swift */,
+				A1B4F713234AE2B0004203BB /* View */,
+				A1B4F714234AEB3F004203BB /* Model */,
+				A1B4F717234AF830004203BB /* Extensions */,
 				11DF3FC71F32B3B9002C58E5 /* Model */,
 				11DF3FC61F32B3AE002C58E5 /* ViewControllers */,
 				119D68E71F01B71B00426D85 /* UIImageEffects */,
@@ -118,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				1106CA4F1F01A0FA00434E58 /* Main.storyboard */,
-				1106CA4D1F01A0FA00434E58 /* ViewController.swift */,
 				11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */,
 				11DF3FC21F32B2C5002C58E5 /* AcknowledgementViewController.swift */,
 			);
@@ -129,12 +135,36 @@
 			isa = PBXGroup;
 			children = (
 				116419051F32DC260031656A /* AppVersion.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A1B4F713234AE2B0004203BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A1B4F70F234ADD4B004203BB /* RootViewController.swift */,
+				A1B4F711234AE261004203BB /* ColorPickerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A1B4F714234AEB3F004203BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				11376D55206DB294006E15BA /* Blurry.swift */,
 				1165BC751F06E44200460749 /* BlurStyle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A1B4F717234AF830004203BB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1B4F715234AF641004203BB /* UIView++.swift */,
 				1165BC731F06E42900460749 /* UIImage++.swift */,
 				11B91EBB206DEF160070454D /* CGSize++.swift */,
 			);
-			name = Model;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C9406525A2E46135FE75D25F /* Frameworks */ = {
@@ -272,16 +302,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B4F716234AF641004203BB /* UIView++.swift in Sources */,
 				11B91EBC206DEF160070454D /* CGSize++.swift in Sources */,
 				11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */,
+				A1B4F710234ADD4B004203BB /* RootViewController.swift in Sources */,
 				11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */,
 				11DF3FC31F32B2C5002C58E5 /* AcknowledgementViewController.swift in Sources */,
-				1106CA4E1F01A0FA00434E58 /* ViewController.swift in Sources */,
 				116419061F32DC260031656A /* AppVersion.swift in Sources */,
 				1165BC761F06E44200460749 /* BlurStyle.swift in Sources */,
 				A1B4F70E234ADB76004203BB /* SceneDelegate.swift in Sources */,
 				1165BC741F06E42900460749 /* UIImage++.swift in Sources */,
 				1106CA4C1F01A0FA00434E58 /* AppDelegate.swift in Sources */,
+				A1B4F712234AE261004203BB /* ColorPickerView.swift in Sources */,
 				11376D56206DB294006E15BA /* Blurry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +460,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = TSCXJ4KWQ4;
 				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andyliang.Blurry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,7 +479,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = TSCXJ4KWQ4;
 				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andyliang.Blurry;
 				PRODUCT_NAME = "$(TARGET_NAME)";

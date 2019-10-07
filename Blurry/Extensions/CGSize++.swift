@@ -9,7 +9,6 @@
 import UIKit
 
 extension CGSize {
-    
     func aspectFill(ratio aspectRatio: CGSize) -> (size: CGSize, ratio: CGFloat) {
         var newSize = aspectRatio
         let mW = self.width / aspectRatio.width
@@ -23,6 +22,5 @@ extension CGSize {
             ratio = mH
         }
         return (newSize, ratio)
-    }
-    
+    }    
 }

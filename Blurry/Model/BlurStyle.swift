@@ -12,9 +12,6 @@ enum BlurStyle {
     case dark
     case light
     case tintColor(UIColor)
-}
-
-extension BlurStyle {
     
     var tintColor: UIColor {
         switch self {
@@ -37,5 +34,20 @@ extension BlurStyle {
             return color
         }
     }
-    
+
+    var shouldDisplayPicker: Bool {
+        switch self {
+        case .tintColor: return true
+        default: return false
+        }
+    }
+
+    static var allTitles: [String] {
+        let titles = ["Dark", "Light", "Custom"]
+        if #available(iOS 13.0, *) {
+            return titles
+        } else {
+            return titles.map { $0.uppercased() }
+        }
+    }
 }

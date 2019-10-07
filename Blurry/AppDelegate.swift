@@ -10,18 +10,18 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate : UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+    
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
         if #available(iOS 13.0, *) {
-            // no customization in iOS 13+
+            // iOS 13 and above uses Scene setup
         } else {
-            let attributes: [NSAttributedString.Key: Any] = [
-                .font: UIFont.boldSystemFont(ofSize: 12),
-                .kern: 2.0
-            ]
-            UISegmentedControl.appearance().setTitleTextAttributes(attributes, for: .normal)
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = RootViewController()
+            window?.makeKeyAndVisible()
         }
         return true
     }
@@ -37,7 +37,6 @@ extension AppDelegate {
         let config = UISceneConfiguration(
             name: "Default Configuration", sessionRole: connectingSceneSession.role)
         config.delegateClass = SceneDelegate.self
-        config.storyboard = UIStoryboard(name: "Main", bundle: .main)
         return config
     }
 }
