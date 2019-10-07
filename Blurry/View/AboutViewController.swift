@@ -84,8 +84,12 @@ class AboutViewController: UITableViewController {
             ]),
             AboutSection(items: [
                 AboutItem(title: "Review Blurry", image: UIImage(named: "Rate")) {
-                    let itunesUrl = URL(string: "https://apps.apple.com/us/app/blurry/id1254612844?action=write-review")!
-                    UIApplication.shared.open(itunesUrl, options: [:], completionHandler: nil)
+                    #if targetEnvironment(macCatalyst)
+                    let appstoreUrl = URL(string: "https://apps.apple.com/app/id1482686361?action=write-review")!
+                    #else
+                    let appstoreUrl = URL(string: "https://apps.apple.com/app/id1254612844?action=write-review")!
+                    #endif
+                    UIApplication.shared.open(appstoreUrl, options: [:], completionHandler: nil)
                 },
                 AboutItem(title: "Contact Support", image: UIImage(named: "Contact")) { [unowned self] in
                     if MFMailComposeViewController.canSendMail() {
