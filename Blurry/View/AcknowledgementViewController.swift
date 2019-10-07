@@ -14,14 +14,11 @@ class AcknowledgementViewController: UIViewController {
         super.viewDidLoad()
         title = "Acknowledgements"
         let textView = UITextView()
+        textView.font = .preferredFont(forTextStyle: .footnote)
         textView.isEditable = false
         textView.isSelectable = false
+        textView.contentInsetAdjustmentBehavior = .never
         
-        if let filePath = Bundle.main.path(forResource: "Acknowledgement", ofType: "txt"),
-           let content = try? String(contentsOfFile: filePath) {
-            textView.text = content
-        }
-
         view.addSubviewWithAutoLayout(textView)
         NSLayoutConstraint.activate([
             textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -35,8 +32,14 @@ class AcknowledgementViewController: UIViewController {
             textView.backgroundColor = .systemBackground
         } else {
             view.backgroundColor = UIColor(named: "Background")
+            textView.backgroundColor = UIColor(named: "Background")
             textView.textColor = .white
         }
-    }
 
+        // load the content
+        if let filePath = Bundle.main.path(forResource: "Acknowledgement", ofType: "txt"),
+            let content = try? String(contentsOfFile: filePath) {
+            textView.text = content
+        }
+    }
 }
