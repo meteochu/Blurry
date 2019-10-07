@@ -21,5 +21,9 @@ class SceneDelegate : UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
+#if targetEnvironment(macCatalyst)
+        guard let bar = windowScene.titlebar else { return }
+        bar.titleVisibility = .hidden
+#endif
     }
 }
