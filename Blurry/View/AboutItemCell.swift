@@ -29,7 +29,12 @@ class AboutItemCell : UITableViewCell {
         if #available(iOS 13.0, *) {
             detailTextLabel?.textColor = .secondaryLabel
         } else {
+            textLabel?.textColor = .white
             detailTextLabel?.textColor = .lightText
+            backgroundColor = UIColor(named: "Background")
+            let backgroundView = UIView()
+            backgroundView.backgroundColor = UIColor(white: 0.15, alpha: 1.0)
+            selectedBackgroundView = backgroundView
         }
     }
 

@@ -64,7 +64,9 @@ class AboutViewController: UITableViewController {
             titleLabel.textColor = .white
             detailLabel.textColor = .lightGray
             versionLabel.textColor = .lightGray
+            tableView.separatorColor = UIColor(white: 0.15, alpha: 1.0)
             view.backgroundColor = UIColor(named: "Background")
+            navigationController?.navigationBar.barStyle = .black
         }
     }
 
