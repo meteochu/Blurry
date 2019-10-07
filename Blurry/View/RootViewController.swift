@@ -12,7 +12,7 @@ import ChromaColorPicker
 class RootViewController : UIViewController {
 
     // MARK: view
-    private let imageView = UIImageView()
+    private let imageView = UIImageView(image: UIImage())
     private let browseButton = UIButton()
     private let saveButton = UIButton()
     private let blurRadiusLabel = UILabel()
@@ -115,7 +115,8 @@ class RootViewController : UIViewController {
         updateUI()
 
         // suppport dropping images
-        view.addInteraction(UIDropInteraction(delegate: self))
+        imageView.isUserInteractionEnabled = true
+        imageView.addInteraction(UIDropInteraction(delegate: self))
     }
 
     @objc private func blurModeDidChange(_ segmentedControl: UISegmentedControl) {
