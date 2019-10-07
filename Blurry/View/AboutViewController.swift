@@ -31,8 +31,10 @@ class AboutViewController: UITableViewController {
 
     override func loadView() {
         super.loadView()
-        let imageView = UIImageView(image: UIImage(named: "Lantern"))
+        let imageView = UIImageView(image: UIImage(named: "Icon"))
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 32
+        imageView.layer.masksToBounds = true
         let titleLabel = UILabel()
         titleLabel.text = "Blurry"
         titleLabel.textAlignment = .center
@@ -43,6 +45,7 @@ class AboutViewController: UITableViewController {
         detailLabel.font = .preferredFont(forTextStyle: .body)
         let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, detailLabel])
         stackView.axis = .vertical
+        stackView.setCustomSpacing(8, after: imageView)
         tableView.tableHeaderView = stackView
         stackView.frame.size = stackView.systemLayoutSizeFitting(tableView.bounds.size)
 
