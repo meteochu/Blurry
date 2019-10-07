@@ -329,7 +329,7 @@
         <!--Acknowledgements-->
         <scene sceneID="Hl6-cx-hF3">
             <objects>
-                <viewController id="8SI-47-GrE" customClass="AcknowledgementViewController" customModule="Blurry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8SI-47-GrE" customClass="AcknowledgementsViewController" customModule="Blurry" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IDy-01-8so">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

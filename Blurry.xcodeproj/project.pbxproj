@@ -16,7 +16,7 @@
 		1165BC741F06E42900460749 /* UIImage++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC731F06E42900460749 /* UIImage++.swift */; };
 		1165BC761F06E44200460749 /* BlurStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC751F06E44200460749 /* BlurStyle.swift */; };
 		11B91EBC206DEF160070454D /* CGSize++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B91EBB206DEF160070454D /* CGSize++.swift */; };
-		11DF3FC31F32B2C5002C58E5 /* AcknowledgementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3FC21F32B2C5002C58E5 /* AcknowledgementViewController.swift */; };
+		11DF3FC31F32B2C5002C58E5 /* AcknowledgementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3FC21F32B2C5002C58E5 /* AcknowledgementsViewController.swift */; };
 		11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */; };
 		11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */; };
 		11FAAF951F32B248007D212F /* Acknowledgement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11FAAF941F32B248007D212F /* Acknowledgement.txt */; };
@@ -28,6 +28,7 @@
 		A1B4F719234AFC62004203BB /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F718234AFC62004203BB /* AboutViewController.swift */; };
 		A1B4F71B234B0011004203BB /* AboutItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71A234B0011004203BB /* AboutItemCell.swift */; };
 		A1B4F71D234B027E004203BB /* Bundle++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71C234B027E004203BB /* Bundle++.swift */; };
+		A1B4F71F234B07A7004203BB /* AcknowledgementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71E234B07A7004203BB /* AcknowledgementViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +43,7 @@
 		1165BC731F06E42900460749 /* UIImage++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage++.swift"; sourceTree = "<group>"; };
 		1165BC751F06E44200460749 /* BlurStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurStyle.swift; sourceTree = "<group>"; };
 		11B91EBB206DEF160070454D /* CGSize++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize++.swift"; sourceTree = "<group>"; };
-		11DF3FC21F32B2C5002C58E5 /* AcknowledgementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementViewController.swift; sourceTree = "<group>"; };
+		11DF3FC21F32B2C5002C58E5 /* AcknowledgementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementsViewController.swift; sourceTree = "<group>"; };
 		11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		11F5AA5B1F01A89100FC1522 /* Blurry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blurry-Bridging-Header.h"; sourceTree = "<group>"; };
 		11F5AA5C1F01A89200FC1522 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		A1B4F718234AFC62004203BB /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		A1B4F71A234B0011004203BB /* AboutItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutItemCell.swift; sourceTree = "<group>"; };
 		A1B4F71C234B027E004203BB /* Bundle++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle++.swift"; sourceTree = "<group>"; };
+		A1B4F71E234B07A7004203BB /* AcknowledgementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementViewController.swift; sourceTree = "<group>"; };
 		CE354B4331EC79CCA9DF7664 /* Pods-Blurry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.release.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.release.xcconfig"; sourceTree = "<group>"; };
 		D45DDB810E75DB286B730FF7 /* Pods-Blurry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.debug.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,7 +134,7 @@
 			children = (
 				1106CA4F1F01A0FA00434E58 /* Main.storyboard */,
 				11DF3FC41F32B3A8002C58E5 /* AboutTableViewController.swift */,
-				11DF3FC21F32B2C5002C58E5 /* AcknowledgementViewController.swift */,
+				11DF3FC21F32B2C5002C58E5 /* AcknowledgementsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +154,7 @@
 				A1B4F70F234ADD4B004203BB /* RootViewController.swift */,
 				A1B4F718234AFC62004203BB /* AboutViewController.swift */,
 				A1B4F71A234B0011004203BB /* AboutItemCell.swift */,
+				A1B4F71E234B07A7004203BB /* AcknowledgementViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,8 +318,9 @@
 				11B91EBC206DEF160070454D /* CGSize++.swift in Sources */,
 				11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */,
 				A1B4F710234ADD4B004203BB /* RootViewController.swift in Sources */,
+				A1B4F71F234B07A7004203BB /* AcknowledgementViewController.swift in Sources */,
 				11DF3FC51F32B3A8002C58E5 /* AboutTableViewController.swift in Sources */,
-				11DF3FC31F32B2C5002C58E5 /* AcknowledgementViewController.swift in Sources */,
+				11DF3FC31F32B2C5002C58E5 /* AcknowledgementsViewController.swift in Sources */,
 				116419061F32DC260031656A /* AppVersion.swift in Sources */,
 				A1B4F71B234B0011004203BB /* AboutItemCell.swift in Sources */,
 				1165BC761F06E44200460749 /* BlurStyle.swift in Sources */,

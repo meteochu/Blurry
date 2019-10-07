@@ -96,7 +96,8 @@ class AboutViewController: UITableViewController {
                     }
                 },
                 AboutItem(title: "Acknowledgements", image: UIImage(named: "Acknowledgements")) {
-
+                    let viewController = AcknowledgementViewController()
+                    self.navigationController?.pushViewController(viewController, animated: true)
                 }
             ])
         ]
