@@ -17,6 +17,7 @@ class RootViewController : UIViewController {
     private let saveButton = UIButton()
     private let blurRadiusLabel = UILabel()
     private let colorPickerView = ColorPickerView()
+    private var infoButton = UIButton()
 
     private var color: UIColor = UIColor.red.withAlphaComponent(0.5)
     private var alpha: CGFloat = 0.35
@@ -41,6 +42,9 @@ class RootViewController : UIViewController {
     override func loadView() {
         super.loadView()
         imageView.contentMode = .scaleAspectFill
+        view.backgroundColor = .systemBackground
+        view.addInteraction(UIDropInteraction(delegate: self))
+        
         colorPickerView.delegate = self
         colorPickerView.isHidden = true
 
@@ -79,7 +83,13 @@ class RootViewController : UIViewController {
         contentView.spacing = 12
         contentView.setCustomSpacing(4, after: blurRadiusLabel)
 
-        let infoButton = UIButton(type: .detailDisclosure)
+#if targetEnvironment(macCatalyst)
+        infoButton.layer.cornerRadius = 4
+        infoButton.contentEdgeInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
+        infoButton.setTitle("About Blurry", for: .normal)
+#else
+        infoButton = UIButton(type: .detailDisclosure)
+#endif
         infoButton.addTarget(self, action: #selector(didTapInfoButton), for: .touchUpInside)
 
         view.addSubviewWithAutoLayout(imageView)
@@ -106,17 +116,13 @@ class RootViewController : UIViewController {
             contentView.topAnchor.constraint(equalTo: colorPickerView.bottomAnchor, constant: 32),
             contentView.leadingAnchor.constraint(equalTo: colorPickerView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: colorPickerView.trailingAnchor),
-            contentView.bottomAnchor.constraint(
-                lessThanOrEqualTo: safeAreaGuide.bottomAnchor, constant: -8),
+            contentView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaGuide.bottomAnchor, constant: -8),
             // 4. info button
             infoButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -16),
-            infoButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -16)
+            infoButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -16),
         ])
-        updateUI()
 
-        // suppport dropping images
-        imageView.isUserInteractionEnabled = true
-        imageView.addInteraction(UIDropInteraction(delegate: self))
+        updateUI()
     }
 
     @objc private func blurModeDidChange(_ segmentedControl: UISegmentedControl) {
@@ -161,13 +167,14 @@ class RootViewController : UIViewController {
     }
 
     @objc private func didTapInfoButton() {
-       let viewController = UINavigationController(rootViewController: AboutViewController())
+        let viewController = UINavigationController(rootViewController: AboutViewController())
         present(viewController, animated: true, completion: nil)
     }
 
     private func updateUI() {
         let tintColor = blurry.blurStyle.tintColor
-        view.backgroundColor = blurry.blurStyle.backgroundColor
+        let backgroundColor = blurry.blurStyle.backgroundColor
+        view.backgroundColor = backgroundColor
         view.tintColor = tintColor
         blurRadiusLabel.textColor = tintColor
         colorPickerView.alphaLabel.textColor = tintColor
@@ -176,6 +183,12 @@ class RootViewController : UIViewController {
         saveButton.setTitleColor(tintColor, for: .normal)
         saveButton.setTitleColor(tintColor.withAlphaComponent(0.5), for: .highlighted)
         saveButton.setTitleColor(tintColor.withAlphaComponent(0.35), for: .disabled)
+#if targetEnvironment(macCatalyst)
+        let color = blurry.blurStyle.infoButtonColor
+        infoButton.setTitleColor(color.withAlphaComponent(0.85), for: .normal)
+        infoButton.setTitleColor(color.withAlphaComponent(0.5), for: .highlighted)
+        infoButton.backgroundColor = tintColor
+#endif
         setNeedsStatusBarAppearanceUpdate()
     }
 

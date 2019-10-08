@@ -43,6 +43,15 @@ enum BlurStyle {
         }
     }
 
+    var infoButtonColor: UIColor {
+        switch self {
+        case .dark, .tintColor:
+            return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
+        case .light:
+            return UIColor(white: 0.9, alpha: 1)
+        }
+    }
+
     var shouldDisplayPicker: Bool {
         switch self {
         case .tintColor: return true
