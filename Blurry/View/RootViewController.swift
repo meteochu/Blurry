@@ -42,7 +42,6 @@ class RootViewController : UIViewController {
     override func loadView() {
         super.loadView()
         imageView.contentMode = .scaleAspectFill
-        view.backgroundColor = .systemBackground
         view.addInteraction(UIDropInteraction(delegate: self))
         
         colorPickerView.delegate = self
