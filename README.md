@@ -1,6 +1,16 @@
-# Blurry for iOS
+# Blurry
 
-Blurry is a small image blur tool for iOS that allows you to select an image in your Photos Library and add the necessary blur on top of it. This is useful when you want a slightly blurred photo as your iOS device's wallpaper.
+Blurry is the go-to image blurring tool to help you apply beautiful blurs for your photos. It is perfect for creating wallpapers, backgrounds, and more.
+
+With Blurry, you can customize and apply a blur effect on top of any photos from your photo library to create the perfect background for your wallpaper.
+
+Through an extraordinarily simple UI, and a selection of dark blur, light blur, and custom colour blur, you can tweak the image effect however you like and save it when you are satisfied. It's that easy! 
+
+
+## Product
+
+- [Blurry on iOS](https://apps.apple.com/app/id1254612844) (Requires iOS 11.4+)
+- [Blurry on Mac](https://apps.apple.com/app/id1482686361) (Requires macOS 10.15+)
 
 ## LICENSE
 
