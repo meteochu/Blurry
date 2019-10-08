@@ -40,7 +40,7 @@ class AboutViewController: UITableViewController {
         titleLabel.textAlignment = .center
         titleLabel.font = .preferredFont(forTextStyle: .title1)
         let detailLabel = UILabel()
-        detailLabel.text = "Image Blurring Made Easy"
+        detailLabel.text = "Quick and Easy Image Blurring"
         detailLabel.textAlignment = .center
         detailLabel.font = .preferredFont(forTextStyle: .body)
         let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, detailLabel])
