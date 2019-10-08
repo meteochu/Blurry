@@ -25,11 +25,15 @@ enum BlurStyle {
     }
 
     var titleAttributes: [NSAttributedString.Key: Any] {
-        return [
-            .font: UIFont.systemFont(ofSize: 12, weight: .bold),
-            .kern: 2.0,
-            .foregroundColor: tintColor
-        ]
+        if #available(iOS 13.0, *) {
+            return [.foregroundColor: tintColor]
+        } else {
+            return [
+                .font: UIFont.systemFont(ofSize: 12, weight: .bold),
+                .kern: 2.0,
+                .foregroundColor: tintColor
+            ]
+        }
     }
     
     var backgroundColor: UIColor {
