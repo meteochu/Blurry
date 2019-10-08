@@ -236,6 +236,7 @@ extension RootViewController : UIDropInteractionDelegate {
         session.loadObjects(ofClass: UIImage.self) { images in
             guard let image = images.first as? UIImage else { return }
             self.blurry.currentImage = image
+            self.saveButton.isEnabled = true
         }
     }
 }
