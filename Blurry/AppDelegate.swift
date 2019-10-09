@@ -25,6 +25,17 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
         }
         return true
     }
+
+    override func buildMenu(with builder: UIMenuBuilder) {
+        builder.remove(menu: .format)
+        let url = URL(string: "mailto:blurry@andyliang.me")!
+        builder.replaceChildren(ofMenu: .help) { elements in
+            let action = UIAction(title: "Contact Support") { action in
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+            return [action]
+        }
+    }
 }
 
 @available(iOS 13.0, *) // iOS 13 Scene Support
