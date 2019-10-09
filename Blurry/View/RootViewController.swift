@@ -221,7 +221,7 @@ class RootViewController : UIViewController {
             }
 
             func showSavePrompt() {
-                let fileName = "blurry-\(self.fileName ?? "image.jpeg")" 
+                let fileName = "blurry-\(self.fileName ?? "image.jpeg")"
                 guard let data = image.jpegData(compressionQuality: 0.8),
                     let exportURL = FileManager.default
                         .urls(for: .documentDirectory, in: .userDomainMask)
