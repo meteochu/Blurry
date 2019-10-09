@@ -18,7 +18,7 @@ struct Prompt {
         }
     }
 
-    private let title: String
+    private let title: String?
     private var actions: [Action] = []
     private unowned let source: UIView
 
@@ -34,7 +34,7 @@ struct Prompt {
         return alertController
     }
 
-    init(title: String, source: UIView) {
+    init(title: String? = nil, source: UIView) {
         self.title = title
         self.source = source
     }

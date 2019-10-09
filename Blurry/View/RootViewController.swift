@@ -211,7 +211,7 @@ class RootViewController : UIViewController {
     private func processSaveRequest(from button: UIButton, with alertController: UIAlertController) {
         if let image = blurry.applyBlur() {
             alertController.dismiss(animated: true) {
-                var prompt = Prompt(title: "Save Options", source: button)
+                var prompt = Prompt(source: button)
                 prompt.add(title: "Share") {
                     let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: [])
                     shareSheet.modalPresentationStyle = .popover
