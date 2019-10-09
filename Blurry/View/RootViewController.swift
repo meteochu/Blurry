@@ -152,9 +152,26 @@ class RootViewController : UIViewController {
     }
 
     @objc private func didTapBrowseButton(_ button: UIButton) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        present(picker, animated: true, completion: nil)
+        let alertController = UIAlertController(title: "Select a Source", message: "", preferredStyle: .actionSheet)
+        if let popover = alertController.popoverPresentationController {
+            popover.permittedArrowDirections = .down
+            popover.sourceView = button
+            popover.sourceRect = button.bounds
+        }
+
+        alertController.addAction(UIAlertAction(title: "Photo Library", style: .default) { _ in
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            self.present(picker, animated: true, completion: nil)
+        })
+
+        alertController.addAction(UIAlertAction(title: "File Browser", style: .default) { _ in
+            let picker = UIDocumentPickerViewController(documentTypes: ["public.image"], in: .import)
+            picker.delegate = self
+            self.present(picker, animated: true, completion: nil)
+        })
+
+        present(alertController, animated: true, completion: nil)
     }
 
     @objc private func radiusSliderValueChanged(_ slider: UISlider) {
@@ -189,6 +206,11 @@ class RootViewController : UIViewController {
         infoButton.backgroundColor = tintColor
 #endif
         setNeedsStatusBarAppearanceUpdate()
+    }
+
+    private func startProcessing(_ image: UIImage) {
+        saveButton.isEnabled = true
+        blurry.currentImage = image
     }
 
     private func processSaveRequest(from button: UIButton, with alertController: UIAlertController) {
@@ -235,9 +257,33 @@ extension RootViewController : UIDropInteractionDelegate {
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
         session.loadObjects(ofClass: UIImage.self) { images in
             guard let image = images.first as? UIImage else { return }
-            self.blurry.currentImage = image
-            self.saveButton.isEnabled = true
+            self.startProcessing(image)
         }
+    }
+}
+
+extension RootViewController : UIDocumentPickerDelegate {
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        // 1. make sure we can import first...
+        guard controller.documentPickerMode == .import else { return }
+        // 2. load the image
+        guard let url = urls.first,
+            let documentUrl = UIDocument(fileURL: url).presentedItemURL,
+            let image = UIImage(contentsOfFile: documentUrl.path)
+        else {
+            let alertController = UIAlertController(
+                title: "Invalid Image",
+                message: "Blurry failed to open the image, try again.",
+                preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        self.startProcessing(image)
     }
 }
 
@@ -256,8 +302,7 @@ extension RootViewController :
     {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[.originalImage] as? UIImage else { return }
-        saveButton.isEnabled = true
-        blurry.currentImage = image
+        startProcessing(image)
     }
 }
 
