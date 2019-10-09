@@ -221,7 +221,7 @@ class RootViewController : UIViewController {
                     }
                     self.present(shareSheet, animated: true, completion: nil)
                 }
-                let fileName = self.fileName ?? "image.jpeg"
+                let fileName = self.fileName ?? "blurry-image.jpeg"
                 prompt.add(title: "Save to Files") {
                     guard let data = image.jpegData(compressionQuality: 0.8),
                         let exportURL = FileManager.default
@@ -315,7 +315,7 @@ extension RootViewController :
     {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[.originalImage] as? UIImage else { return }
-        startProcessing(image, url: info[.imageURL] as? URL)
+        startProcessing(image, url: nil)
     }
 }
 
