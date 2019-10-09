@@ -18,6 +18,7 @@ class RootViewController : UIViewController {
     private let blurRadiusLabel = UILabel()
     private let colorPickerView = ColorPickerView()
     private var infoButton = UIButton()
+    private var fileName: String?
 
     private var color: UIColor = UIColor.red.withAlphaComponent(0.5)
     private var alpha: CGFloat = 0.35
@@ -152,26 +153,18 @@ class RootViewController : UIViewController {
     }
 
     @objc private func didTapBrowseButton(_ button: UIButton) {
-        let alertController = UIAlertController(title: "Select a Source", message: "", preferredStyle: .actionSheet)
-        if let popover = alertController.popoverPresentationController {
-            popover.permittedArrowDirections = .down
-            popover.sourceView = button
-            popover.sourceRect = button.bounds
-        }
-
-        alertController.addAction(UIAlertAction(title: "Photo Library", style: .default) { _ in
+        var prompt = Prompt(title: "Select a Source", source: button)
+        prompt.add(title: "Photo Library") {
             let picker = UIImagePickerController()
             picker.delegate = self
             self.present(picker, animated: true, completion: nil)
-        })
-
-        alertController.addAction(UIAlertAction(title: "File Browser", style: .default) { _ in
+        }
+        prompt.add(title: "File Browser") {
             let picker = UIDocumentPickerViewController(documentTypes: ["public.image"], in: .import)
             picker.delegate = self
             self.present(picker, animated: true, completion: nil)
-        })
-
-        present(alertController, animated: true, completion: nil)
+        }
+        present(prompt.alertController, animated: true, completion: nil)
     }
 
     @objc private func radiusSliderValueChanged(_ slider: UISlider) {
@@ -208,21 +201,41 @@ class RootViewController : UIViewController {
         setNeedsStatusBarAppearanceUpdate()
     }
 
-    private func startProcessing(_ image: UIImage) {
+    private func startProcessing(_ image: UIImage, url: URL?) {
+        fileName = url?.lastPathComponent
         saveButton.isEnabled = true
         blurry.currentImage = image
+        print("[Blurry] opened file: \(fileName ?? "-")")
     }
 
     private func processSaveRequest(from button: UIButton, with alertController: UIAlertController) {
         if let image = blurry.applyBlur() {
             alertController.dismiss(animated: true) {
-                let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: [])
-                shareSheet.modalPresentationStyle = .popover
-                if let popover = shareSheet.popoverPresentationController {
-                    popover.sourceView = button
-                    popover.sourceRect = button.bounds
+                var prompt = Prompt(title: "Save Options", source: button)
+                prompt.add(title: "Share") {
+                    let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: [])
+                    shareSheet.modalPresentationStyle = .popover
+                    if let popover = shareSheet.popoverPresentationController {
+                        popover.sourceView = button
+                        popover.sourceRect = button.bounds
+                    }
+                    self.present(shareSheet, animated: true, completion: nil)
                 }
-                self.present(shareSheet, animated: true, completion: nil)
+                let fileName = self.fileName ?? "image.jpeg"
+                prompt.add(title: "Save to Files") {
+                    guard let data = image.jpegData(compressionQuality: 0.8),
+                        let exportURL = FileManager.default
+                            .urls(for: .documentDirectory, in: .userDomainMask)
+                            .first?.appendingPathComponent(fileName) else { return }
+                    do {
+                        try data.write(to: exportURL)
+                        let browser = UIDocumentPickerViewController(url: exportURL, in: .exportToService)
+                        self.present(browser, animated: true, completion: nil)
+                    } catch {
+                        print(error)
+                    }
+                }
+                self.present(prompt.alertController, animated: true, completion: nil)
             }
         } else {
             alertController.dismiss(animated: true) {
@@ -257,7 +270,7 @@ extension RootViewController : UIDropInteractionDelegate {
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
         session.loadObjects(ofClass: UIImage.self) { images in
             guard let image = images.first as? UIImage else { return }
-            self.startProcessing(image)
+            self.startProcessing(image, url: nil)
         }
     }
 }
@@ -283,7 +296,7 @@ extension RootViewController : UIDocumentPickerDelegate {
             self.present(alertController, animated: true, completion: nil)
             return
         }
-        self.startProcessing(image)
+        self.startProcessing(image, url: documentUrl)
     }
 }
 
@@ -302,7 +315,7 @@ extension RootViewController :
     {
         picker.dismiss(animated: true, completion: nil)
         guard let image = info[.originalImage] as? UIImage else { return }
-        startProcessing(image)
+        startProcessing(image, url: info[.imageURL] as? URL)
     }
 }
 

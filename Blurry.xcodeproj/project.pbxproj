@@ -25,6 +25,7 @@
 		A1B4F71B234B0011004203BB /* AboutItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71A234B0011004203BB /* AboutItemCell.swift */; };
 		A1B4F71D234B027E004203BB /* Bundle++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71C234B027E004203BB /* Bundle++.swift */; };
 		A1B4F71F234B07A7004203BB /* AcknowledgementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71E234B07A7004203BB /* AcknowledgementViewController.swift */; };
+		A1DEF4FC234D5B1B00BA58D1 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		A1B4F71C234B027E004203BB /* Bundle++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle++.swift"; sourceTree = "<group>"; };
 		A1B4F71E234B07A7004203BB /* AcknowledgementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementViewController.swift; sourceTree = "<group>"; };
 		A1CB720B234BC0CB00654734 /* Blurry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blurry.entitlements; sourceTree = "<group>"; };
+		A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		CE354B4331EC79CCA9DF7664 /* Pods-Blurry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.release.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.release.xcconfig"; sourceTree = "<group>"; };
 		D45DDB810E75DB286B730FF7 /* Pods-Blurry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.debug.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 		A1B4F713234AE2B0004203BB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */,
 				A1B4F711234AE261004203BB /* ColorPickerView.swift */,
 				A1B4F70F234ADD4B004203BB /* RootViewController.swift */,
 				A1B4F718234AFC62004203BB /* AboutViewController.swift */,
@@ -291,6 +294,7 @@
 				11B91EBC206DEF160070454D /* CGSize++.swift in Sources */,
 				11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */,
 				A1B4F710234ADD4B004203BB /* RootViewController.swift in Sources */,
+				A1DEF4FC234D5B1B00BA58D1 /* Prompt.swift in Sources */,
 				A1B4F71F234B07A7004203BB /* AcknowledgementViewController.swift in Sources */,
 				A1B4F71B234B0011004203BB /* AboutItemCell.swift in Sources */,
 				1165BC761F06E44200460749 /* BlurStyle.swift in Sources */,
