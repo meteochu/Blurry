@@ -94,9 +94,9 @@ class Blurry {
     // final image that is saved
     func applyBlur() -> UIImage? {
         guard let image = currentImage else { return nil }
-        return image.applying(style: blurStyle, with: blurRadius)
+        let blurred = image.applying(style: blurStyle, with: blurRadius)
+        return UIImage(cgImage: blurred.cgImage!, scale: image.scale, orientation: image.imageOrientation)
     }
-
 }
 
 extension Double {
