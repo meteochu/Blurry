@@ -93,6 +93,10 @@ class AboutViewController: UITableViewController {
                     UIApplication.shared.open(appstoreUrl, options: [:], completionHandler: nil)
                 },
                 AboutItem(title: "Contact Support", image: UIImage(named: "Contact")) { [unowned self] in
+#if targetEnvironment(macCatalyst)
+                    let url = URL(string: "mailto:blurry@andyliang.me")!
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+#else
                     if MFMailComposeViewController.canSendMail() {
                         let composeView = MFMailComposeViewController()
                         composeView.setToRecipients(["blurry@andyliang.me"])
@@ -104,6 +108,7 @@ class AboutViewController: UITableViewController {
                         controller.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
                         self.present(controller, animated: true, completion: nil)
                     }
+#endif
                 },
                 AboutItem(title: "Acknowledgements", image: UIImage(named: "Acknowledgements")) {
                     let viewController = AcknowledgementViewController()
