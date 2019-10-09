@@ -210,32 +210,40 @@ class RootViewController : UIViewController {
 
     private func processSaveRequest(from button: UIButton, with alertController: UIAlertController) {
         if let image = blurry.applyBlur() {
+            func showShareSheet() {
+                let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: [])
+                shareSheet.modalPresentationStyle = .popover
+                if let popover = shareSheet.popoverPresentationController {
+                    popover.sourceView = button
+                    popover.sourceRect = button.bounds
+                }
+                self.present(shareSheet, animated: true, completion: nil)
+            }
+
+            func showSavePrompt() {
+                let fileName = "blurry-\(self.fileName ?? "image.jpeg")" 
+                guard let data = image.jpegData(compressionQuality: 0.8),
+                    let exportURL = FileManager.default
+                        .urls(for: .documentDirectory, in: .userDomainMask)
+                        .first?.appendingPathComponent(fileName) else { return }
+                do {
+                    try data.write(to: exportURL)
+                    let browser = UIDocumentPickerViewController(url: exportURL, in: .exportToService)
+                    self.present(browser, animated: true, completion: nil)
+                } catch {
+                    print(error)
+                }
+            }
+
             alertController.dismiss(animated: true) {
+#if targetEnvironment(macCatalyst)
                 var prompt = Prompt(source: button)
-                prompt.add(title: "Share") {
-                    let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: [])
-                    shareSheet.modalPresentationStyle = .popover
-                    if let popover = shareSheet.popoverPresentationController {
-                        popover.sourceView = button
-                        popover.sourceRect = button.bounds
-                    }
-                    self.present(shareSheet, animated: true, completion: nil)
-                }
-                let fileName = self.fileName ?? "blurry-image.jpeg"
-                prompt.add(title: "Save to Files") {
-                    guard let data = image.jpegData(compressionQuality: 0.8),
-                        let exportURL = FileManager.default
-                            .urls(for: .documentDirectory, in: .userDomainMask)
-                            .first?.appendingPathComponent(fileName) else { return }
-                    do {
-                        try data.write(to: exportURL)
-                        let browser = UIDocumentPickerViewController(url: exportURL, in: .exportToService)
-                        self.present(browser, animated: true, completion: nil)
-                    } catch {
-                        print(error)
-                    }
-                }
+                prompt.add(title: "Share", action: showShareSheet)
+                prompt.add(title: "Save to Files", action: showSavePrompt)
                 self.present(prompt.alertController, animated: true, completion: nil)
+#else
+                showShareSheet()
+#endif
             }
         } else {
             alertController.dismiss(animated: true) {
