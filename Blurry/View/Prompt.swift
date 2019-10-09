@@ -30,6 +30,7 @@ struct Prompt {
             popover.permittedArrowDirections = [.up, .down]
         }
         actions.map { $0.alertAction }.forEach { alertController.addAction($0) }
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         return alertController
     }
 
