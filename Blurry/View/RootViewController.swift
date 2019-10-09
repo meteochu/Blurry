@@ -57,13 +57,13 @@ class RootViewController : UIViewController {
         }
         
         blurRadiusLabel.font = .preferredFont(forTextStyle: .headline)
-        blurRadiusLabel.text = "Blur Radius (60)"
+        blurRadiusLabel.text = "Blur Radius (32)"
 
         let radiusSlider = UISlider()
         radiusSlider.isContinuous = true
         radiusSlider.minimumValue = 0.0
         radiusSlider.maximumValue = 100.0
-        radiusSlider.value = 60.0
+        radiusSlider.value = 32.0
         radiusSlider.addTarget(self, action: #selector(radiusSliderValueChanged), for: .valueChanged)
 
         browseButton.setTitle("Select Photo", for: .normal)
