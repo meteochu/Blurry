@@ -33,8 +33,9 @@ class AboutViewController: UITableViewController {
         super.loadView()
         let imageView = UIImageView(image: UIImage(named: "Icon"))
         imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 32
-        imageView.layer.masksToBounds = true
+        imageView.layer.shadowRadius = 3.0
+        imageView.layer.shadowOpacity = 0.25
+        imageView.layer.shadowOffset = CGSize(width: 0, height: 2)
         let titleLabel = UILabel()
         titleLabel.text = "Blurry"
         titleLabel.textAlignment = .center
