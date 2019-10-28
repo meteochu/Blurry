@@ -17,6 +17,7 @@
 		11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */; };
 		11FAAF951F32B248007D212F /* Acknowledgement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11FAAF941F32B248007D212F /* Acknowledgement.txt */; };
 		5FDF854876074FAC6AEB0096 /* Pods_Blurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */; };
+		A189B20423666BCA001C5814 /* AboutSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B20323666BCA001C5814 /* AboutSceneDelegate.swift */; };
 		A1B4F70E234ADB76004203BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70D234ADB76004203BB /* SceneDelegate.swift */; };
 		A1B4F710234ADD4B004203BB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70F234ADD4B004203BB /* RootViewController.swift */; };
 		A1B4F712234AE261004203BB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F711234AE261004203BB /* ColorPickerView.swift */; };
@@ -43,6 +44,7 @@
 		11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		11FAAF941F32B248007D212F /* Acknowledgement.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Acknowledgement.txt; sourceTree = "<group>"; };
 		81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blurry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A189B20323666BCA001C5814 /* AboutSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSceneDelegate.swift; sourceTree = "<group>"; };
 		A1B4F70D234ADB76004203BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A1B4F70F234ADD4B004203BB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		A1B4F711234AE261004203BB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				A1CB720B234BC0CB00654734 /* Blurry.entitlements */,
 				1106CA4B1F01A0FA00434E58 /* AppDelegate.swift */,
 				A1B4F70D234ADB76004203BB /* SceneDelegate.swift */,
+				A189B20323666BCA001C5814 /* AboutSceneDelegate.swift */,
 				A1B4F713234AE2B0004203BB /* View */,
 				A1B4F714234AEB3F004203BB /* Model */,
 				A1B4F717234AF830004203BB /* Extensions */,
@@ -297,6 +300,7 @@
 				A1DEF4FC234D5B1B00BA58D1 /* Prompt.swift in Sources */,
 				A1B4F71F234B07A7004203BB /* AcknowledgementViewController.swift in Sources */,
 				A1B4F71B234B0011004203BB /* AboutItemCell.swift in Sources */,
+				A189B20423666BCA001C5814 /* AboutSceneDelegate.swift in Sources */,
 				1165BC761F06E44200460749 /* BlurStyle.swift in Sources */,
 				A1B4F71D234B027E004203BB /* Bundle++.swift in Sources */,
 				A1B4F70E234ADB76004203BB /* SceneDelegate.swift in Sources */,

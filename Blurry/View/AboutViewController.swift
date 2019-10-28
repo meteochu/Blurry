@@ -15,8 +15,10 @@ class AboutViewController: UITableViewController {
     init() {
         if #available(iOS 13.0, *) {
             super.init(style: .insetGrouped)
+#if !targetEnvironment(macCatalyst)
             navigationItem.rightBarButtonItem = UIBarButtonItem(
                 barButtonSystemItem: .close, target: self, action: #selector(didTapCloseButton))
+#endif
         } else {
             super.init(style: .grouped)
             navigationItem.rightBarButtonItem = UIBarButtonItem(

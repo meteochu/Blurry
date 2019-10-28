@@ -28,6 +28,14 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
 
     override func buildMenu(with builder: UIMenuBuilder) {
         builder.remove(menu: .format)
+        builder.replaceChildren(ofMenu: .about) { _ in
+            let action = UIAction(title: "About Blurry") { _ in
+                UIApplication.shared.requestSceneSessionActivation(
+                    nil, userActivity: NSUserActivity(activityType: "about-page"),
+                    options: nil, errorHandler: nil)
+            }
+            return [ action ]
+        }
         let url = URL(string: "mailto:blurry@andyliang.me")!
         builder.replaceChildren(ofMenu: .help) { elements in
             let action = UIAction(title: "Contact Support") { action in
@@ -45,9 +53,16 @@ extension AppDelegate {
         configurationForConnecting connectingSceneSession: UISceneSession,
         options: UIScene.ConnectionOptions
     ) -> UISceneConfiguration {
-        let config = UISceneConfiguration(
-            name: "Default Configuration", sessionRole: connectingSceneSession.role)
-        config.delegateClass = SceneDelegate.self
-        return config
+        if options.userActivities.isEmpty {
+            let config = UISceneConfiguration(
+                name: "Default Configuration", sessionRole: connectingSceneSession.role)
+            config.delegateClass = SceneDelegate.self
+            return config
+        } else {
+            let config = UISceneConfiguration(
+                name: "About Configuration", sessionRole: connectingSceneSession.role)
+            config.delegateClass = AboutSceneDelegate.self
+            return config
+        }
     }
 }

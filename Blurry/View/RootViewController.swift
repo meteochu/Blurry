@@ -17,7 +17,9 @@ class RootViewController : UIViewController {
     private let saveButton = UIButton()
     private let blurRadiusLabel = UILabel()
     private let colorPickerView = ColorPickerView()
-    private var infoButton = UIButton()
+#if !targetEnvironment(macCatalyst)
+    private let infoButton = UIButton(type: .detailDisclosure)
+#endif
     private var fileName: String?
 
     private var color: UIColor = UIColor.red.withAlphaComponent(0.5)
@@ -83,19 +85,14 @@ class RootViewController : UIViewController {
         contentView.spacing = 12
         contentView.setCustomSpacing(4, after: blurRadiusLabel)
 
-#if targetEnvironment(macCatalyst)
-        infoButton.layer.cornerRadius = 4
-        infoButton.contentEdgeInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8)
-        infoButton.setTitle("About Blurry", for: .normal)
-#else
-        infoButton = UIButton(type: .detailDisclosure)
-#endif
+#if !targetEnvironment(macCatalyst)
         infoButton.addTarget(self, action: #selector(didTapInfoButton), for: .touchUpInside)
-
+        view.addSubviewWithAutoLayout(infoButton)
+#endif
         view.addSubviewWithAutoLayout(imageView)
         view.addSubviewWithAutoLayout(colorPickerView)
         view.addSubviewWithAutoLayout(contentView)
-        view.addSubviewWithAutoLayout(infoButton)
+
 
         let guide = view.layoutMarginsGuide
         let safeAreaGuide = view.safeAreaLayoutGuide
@@ -117,11 +114,14 @@ class RootViewController : UIViewController {
             contentView.leadingAnchor.constraint(equalTo: colorPickerView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: colorPickerView.trailingAnchor),
             contentView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaGuide.bottomAnchor, constant: -8),
-            // 4. info button
-            infoButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -16),
-            infoButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -16),
         ])
 
+#if !targetEnvironment(macCatalyst)
+        NSLayoutConstraint.activate([
+            infoButton.bottomAnchor.constraint(equalTo: safeAreaGuide.bottomAnchor, constant: -16),
+            infoButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -16)
+        ])
+#endif
         updateUI()
     }
 
@@ -192,12 +192,6 @@ class RootViewController : UIViewController {
         saveButton.setTitleColor(tintColor, for: .normal)
         saveButton.setTitleColor(tintColor.withAlphaComponent(0.5), for: .highlighted)
         saveButton.setTitleColor(tintColor.withAlphaComponent(0.35), for: .disabled)
-#if targetEnvironment(macCatalyst)
-        let color = blurry.blurStyle.infoButtonColor
-        infoButton.setTitleColor(color.withAlphaComponent(0.85), for: .normal)
-        infoButton.setTitleColor(color.withAlphaComponent(0.5), for: .highlighted)
-        infoButton.backgroundColor = tintColor
-#endif
         setNeedsStatusBarAppearanceUpdate()
     }
 
