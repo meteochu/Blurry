@@ -26,6 +26,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
         return true
     }
 
+#if targetEnvironment(macCatalyst)
     override func buildMenu(with builder: UIMenuBuilder) {
         builder.remove(menu: .format)
         builder.replaceChildren(ofMenu: .about) { _ in
@@ -44,6 +45,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
             return [action]
         }
     }
+#endif
 }
 
 @available(iOS 13.0, *) // iOS 13 Scene Support
@@ -53,6 +55,7 @@ extension AppDelegate {
         configurationForConnecting connectingSceneSession: UISceneSession,
         options: UIScene.ConnectionOptions
     ) -> UISceneConfiguration {
+#if targetEnvironment(macCatalyst)
         if options.userActivities.isEmpty {
             let config = UISceneConfiguration(
                 name: "Default Configuration", sessionRole: connectingSceneSession.role)
@@ -64,5 +67,11 @@ extension AppDelegate {
             config.delegateClass = AboutSceneDelegate.self
             return config
         }
+#else // iOS only
+        let config = UISceneConfiguration(
+            name: "Default Configuration", sessionRole: connectingSceneSession.role)
+        config.delegateClass = SceneDelegate.self
+        return config
+#endif
     }
 }
