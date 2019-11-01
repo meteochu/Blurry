@@ -85,14 +85,13 @@ class RootViewController : UIViewController {
         contentView.spacing = 12
         contentView.setCustomSpacing(4, after: blurRadiusLabel)
 
-#if !targetEnvironment(macCatalyst)
-        infoButton.addTarget(self, action: #selector(didTapInfoButton), for: .touchUpInside)
-        view.addSubviewWithAutoLayout(infoButton)
-#endif
         view.addSubviewWithAutoLayout(imageView)
         view.addSubviewWithAutoLayout(colorPickerView)
         view.addSubviewWithAutoLayout(contentView)
-
+        #if !targetEnvironment(macCatalyst)
+        infoButton.addTarget(self, action: #selector(didTapInfoButton), for: .touchUpInside)
+        view.addSubviewWithAutoLayout(infoButton)
+        #endif
 
         let guide = view.layoutMarginsGuide
         let safeAreaGuide = view.safeAreaLayoutGuide
