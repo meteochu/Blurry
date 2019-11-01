@@ -285,10 +285,10 @@ extension RootViewController : UIDocumentPickerDelegate {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         // 1. make sure we can import first...
         guard controller.documentPickerMode == .import else { return }
-        // 2. load the image
+        // 2. load the image by loading the data from URL first
         guard let url = urls.first,
-            let documentUrl = UIDocument(fileURL: url).presentedItemURL,
-            let image = UIImage(contentsOfFile: documentUrl.path)
+              let data = try? Data(contentsOf: url),
+              let image = UIImage(data: data)
         else {
             let alertController = UIAlertController(
                 title: "Invalid Image",
@@ -298,7 +298,8 @@ extension RootViewController : UIDocumentPickerDelegate {
             self.present(alertController, animated: true, completion: nil)
             return
         }
-        self.startProcessing(image, url: documentUrl)
+
+        self.startProcessing(image, url: url)
     }
 }
 
