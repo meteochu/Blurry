@@ -59,13 +59,14 @@ class Blurry {
 
 
     private func processImage(for workItem: DispatchWorkItem? = nil) {
-        processQueue.async {
-            guard let image = self.scaledImage else { return }  // image is nil, ignore
-            if self.isProcessing {
-                self.nextWorkItem = self.createWorkItem(for: image)
+        processQueue.async { [weak self] in
+            // if the queue image is nil, ignore
+            guard let _self = self, let image = _self.scaledImage else { return }
+            if _self.isProcessing {
+                _self.nextWorkItem = _self.createWorkItem(for: image)
             } else {
-                let item = workItem ?? self.createWorkItem(for: image)
-                self.processQueue.async(execute: item)
+                let item = workItem ?? _self.createWorkItem(for: image)
+                _self.processQueue.async(execute: item)
             }
         }
     }
