@@ -28,7 +28,7 @@ class Blurry {
         }
     }
 
-    var blurRadius: CGFloat = 60.0 {
+    var blurRadius: CGFloat = .defaultBlurRadius {
         didSet { scaledRadius = blurRadius / scaleRatio }
     }
 
@@ -44,7 +44,7 @@ class Blurry {
         didSet { scaledRadius = blurRadius / scaleRatio }
     }
 
-    private var scaledRadius: CGFloat = 60.0 {
+    private var scaledRadius: CGFloat = .defaultBlurRadius {
         didSet { processImage() }
     }
 
@@ -56,7 +56,6 @@ class Blurry {
         completionQueue = queue
         completionHandler = completion
     }
-
 
     private func processImage(for workItem: DispatchWorkItem? = nil) {
         processQueue.async { [weak self] in
@@ -73,7 +72,7 @@ class Blurry {
 
     private func createWorkItem(for image: UIImage) -> DispatchWorkItem {
         let style = blurStyle
-        let radius = blurRadius
+        let radius = scaledRadius
         return DispatchWorkItem {
             self.isProcessing = true
             let startTime = Date()
@@ -105,4 +104,8 @@ extension Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
+}
+
+extension CGFloat {
+    static let defaultBlurRadius: CGFloat = 32
 }
