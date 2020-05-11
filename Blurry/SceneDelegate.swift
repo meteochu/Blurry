@@ -17,7 +17,9 @@ class SceneDelegate : UIResponder, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession,
         options connectionOptions: UIScene.ConnectionOptions)
     {
-        guard let windowScene = scene as? UIWindowScene else { return }
+        guard let windowScene = scene as? UIWindowScene,
+            session.role == .windowApplication // don't permit external display support
+        else { return }
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = RootViewController()
         window?.makeKeyAndVisible()
