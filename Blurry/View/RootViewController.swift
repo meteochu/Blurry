@@ -25,8 +25,8 @@ class RootViewController : UIViewController {
     private var color: UIColor = UIColor.red.withAlphaComponent(0.5)
     private var alpha: CGFloat = 0.35
 
-    private lazy var blurry = Blurry(size: view.bounds.size) { image in
-        self.imageView.image = image
+    private lazy var blurry = Blurry(size: view.bounds.size) { [weak self] image in
+        self?.imageView.image = image
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -84,6 +84,14 @@ class RootViewController : UIViewController {
         contentView.distribution = .equalCentering
         contentView.spacing = 12
         contentView.setCustomSpacing(4, after: blurRadiusLabel)
+
+        if #available(iOS 13.4, *) {
+            browseButton.isPointerInteractionEnabled = true
+            saveButton.isPointerInteractionEnabled = true
+            #if !targetEnvironment(macCatalyst)
+            infoButton.isPointerInteractionEnabled = true
+            #endif
+        }
 
         view.addSubviewWithAutoLayout(imageView)
         view.addSubviewWithAutoLayout(colorPickerView)

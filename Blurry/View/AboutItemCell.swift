@@ -21,7 +21,7 @@ struct AboutItem {
     let action: () -> Void
 }
 
-class AboutItemCell : UITableViewCell {
+class AboutItemCell : UITableViewCell, UIPointerInteractionDelegate {
     static let reuseId = "AboutItemCell.reuseId"
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -35,6 +35,10 @@ class AboutItemCell : UITableViewCell {
             let backgroundView = UIView()
             backgroundView.backgroundColor = UIColor(white: 0.15, alpha: 1.0)
             selectedBackgroundView = backgroundView
+        }
+
+        if #available(iOS 13.4, *) {
+            addInteraction(UIPointerInteraction(delegate: self))
         }
     }
 
@@ -50,5 +54,13 @@ class AboutItemCell : UITableViewCell {
             imageView?.image = item.image
             accessoryType = item.accessoryType
         }
+    }
+
+    @available(iOS 13.4, *)
+    func pointerInteraction(
+        _ interaction: UIPointerInteraction, styleFor region: UIPointerRegion
+    ) -> UIPointerStyle? {
+        let targetedPreview = UITargetedPreview(view: self)
+        return UIPointerStyle(effect: .automatic(targetedPreview))
     }
 }
