@@ -13,10 +13,28 @@
 		11376D56206DB294006E15BA /* Blurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11376D55206DB294006E15BA /* Blurry.swift */; };
 		1165BC741F06E42900460749 /* UIImage++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC731F06E42900460749 /* UIImage++.swift */; };
 		1165BC761F06E44200460749 /* BlurStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC751F06E44200460749 /* BlurStyle.swift */; };
+		11B531612559B1CE00B79764 /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F715234AF641004203BB /* UIView++.swift */; };
+		11B531622559B1CE00B79764 /* CGSize++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B91EBB206DEF160070454D /* CGSize++.swift */; };
+		11B531632559B1CE00B79764 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */; };
+		11B531642559B1CE00B79764 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70F234ADD4B004203BB /* RootViewController.swift */; };
+		11B531652559B1CE00B79764 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */; };
+		11B531662559B1CE00B79764 /* AcknowledgementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71E234B07A7004203BB /* AcknowledgementViewController.swift */; };
+		11B531672559B1CE00B79764 /* AboutItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71A234B0011004203BB /* AboutItemCell.swift */; };
+		11B531682559B1CE00B79764 /* AboutSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B20323666BCA001C5814 /* AboutSceneDelegate.swift */; };
+		11B531692559B1CE00B79764 /* BlurStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC751F06E44200460749 /* BlurStyle.swift */; };
+		11B5316A2559B1CE00B79764 /* Bundle++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71C234B027E004203BB /* Bundle++.swift */; };
+		11B5316B2559B1CE00B79764 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70D234ADB76004203BB /* SceneDelegate.swift */; };
+		11B5316C2559B1CE00B79764 /* UIImage++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC731F06E42900460749 /* UIImage++.swift */; };
+		11B5316D2559B1CE00B79764 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F718234AFC62004203BB /* AboutViewController.swift */; };
+		11B5316E2559B1CE00B79764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106CA4B1F01A0FA00434E58 /* AppDelegate.swift */; };
+		11B5316F2559B1CE00B79764 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F711234AE261004203BB /* ColorPickerView.swift */; };
+		11B531702559B1CE00B79764 /* Blurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11376D55206DB294006E15BA /* Blurry.swift */; };
+		11B531742559B1CE00B79764 /* Acknowledgement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11FAAF941F32B248007D212F /* Acknowledgement.txt */; };
+		11B531752559B1CE00B79764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA541F01A0FA00434E58 /* LaunchScreen.storyboard */; };
+		11B531762559B1CE00B79764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA521F01A0FA00434E58 /* Assets.xcassets */; };
 		11B91EBC206DEF160070454D /* CGSize++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B91EBB206DEF160070454D /* CGSize++.swift */; };
 		11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */; };
 		11FAAF951F32B248007D212F /* Acknowledgement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11FAAF941F32B248007D212F /* Acknowledgement.txt */; };
-		5FDF854876074FAC6AEB0096 /* Pods_Blurry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */; };
 		A189B20423666BCA001C5814 /* AboutSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B20323666BCA001C5814 /* AboutSceneDelegate.swift */; };
 		A1B4F70E234ADB76004203BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70D234ADB76004203BB /* SceneDelegate.swift */; };
 		A1B4F710234ADD4B004203BB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70F234ADD4B004203BB /* RootViewController.swift */; };
@@ -38,12 +56,13 @@
 		11376D55206DB294006E15BA /* Blurry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blurry.swift; sourceTree = "<group>"; };
 		1165BC731F06E42900460749 /* UIImage++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage++.swift"; sourceTree = "<group>"; };
 		1165BC751F06E44200460749 /* BlurStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurStyle.swift; sourceTree = "<group>"; };
+		11B5317B2559B1CE00B79764 /* Blurry-old.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blurry-old.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11B5317C2559B1CF00B79764 /* BlurryOld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BlurryOld-Info.plist"; path = "/Users/andyl/Projects/Apps/Blurry/Blurry/Supporting Files/BlurryOld-Info.plist"; sourceTree = "<absolute>"; };
 		11B91EBB206DEF160070454D /* CGSize++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize++.swift"; sourceTree = "<group>"; };
 		11F5AA5B1F01A89100FC1522 /* Blurry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blurry-Bridging-Header.h"; sourceTree = "<group>"; };
 		11F5AA5C1F01A89200FC1522 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
 		11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		11FAAF941F32B248007D212F /* Acknowledgement.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Acknowledgement.txt; sourceTree = "<group>"; };
-		81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blurry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A189B20323666BCA001C5814 /* AboutSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSceneDelegate.swift; sourceTree = "<group>"; };
 		A1B4F70D234ADB76004203BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A1B4F70F234ADD4B004203BB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -55,8 +74,6 @@
 		A1B4F71E234B07A7004203BB /* AcknowledgementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementViewController.swift; sourceTree = "<group>"; };
 		A1CB720B234BC0CB00654734 /* Blurry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blurry.entitlements; sourceTree = "<group>"; };
 		A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
-		CE354B4331EC79CCA9DF7664 /* Pods-Blurry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.release.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.release.xcconfig"; sourceTree = "<group>"; };
-		D45DDB810E75DB286B730FF7 /* Pods-Blurry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blurry.debug.xcconfig"; path = "Target Support Files/Pods-Blurry/Pods-Blurry.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +81,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FDF854876074FAC6AEB0096 /* Pods_Blurry.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B531712559B1CE00B79764 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +100,6 @@
 				1106CA4A1F01A0FA00434E58 /* Blurry */,
 				1106CA491F01A0FA00434E58 /* Products */,
 				E82980E9E419390F3ABD25A6 /* Pods */,
-				C9406525A2E46135FE75D25F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				1106CA481F01A0FA00434E58 /* Blurry.app */,
+				11B5317B2559B1CE00B79764 /* Blurry-old.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +141,7 @@
 		119D68E81F01B72400426D85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				11B5317C2559B1CF00B79764 /* BlurryOld-Info.plist */,
 				11FAAF941F32B248007D212F /* Acknowledgement.txt */,
 				1106CA521F01A0FA00434E58 /* Assets.xcassets */,
 				1106CA541F01A0FA00434E58 /* LaunchScreen.storyboard */,
@@ -159,19 +183,9 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		C9406525A2E46135FE75D25F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				81FE09314CAB46A5C5084112 /* Pods_Blurry.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E82980E9E419390F3ABD25A6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D45DDB810E75DB286B730FF7 /* Pods-Blurry.debug.xcconfig */,
-				CE354B4331EC79CCA9DF7664 /* Pods-Blurry.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -183,11 +197,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1106CA701F01A0FA00434E58 /* Build configuration list for PBXNativeTarget "Blurry" */;
 			buildPhases = (
-				28259E3B5C043F02F311B5FE /* [CP] Check Pods Manifest.lock */,
 				1106CA441F01A0FA00434E58 /* Sources */,
 				1106CA451F01A0FA00434E58 /* Frameworks */,
 				1106CA461F01A0FA00434E58 /* Resources */,
-				FD0E38EB25D0F0DE9A529F8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,6 +210,23 @@
 			productReference = 1106CA481F01A0FA00434E58 /* Blurry.app */;
 			productType = "com.apple.product-type.application";
 		};
+		11B5315E2559B1CE00B79764 /* Blurry-old */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11B531782559B1CE00B79764 /* Build configuration list for PBXNativeTarget "Blurry-old" */;
+			buildPhases = (
+				11B531602559B1CE00B79764 /* Sources */,
+				11B531712559B1CE00B79764 /* Frameworks */,
+				11B531732559B1CE00B79764 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Blurry-old";
+			productName = Blurr;
+			productReference = 11B5317B2559B1CE00B79764 /* Blurry-old.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,7 +234,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Andy Liang";
 				TargetAttributes = {
 					1106CA471F01A0FA00434E58 = {
@@ -228,6 +257,7 @@
 			projectRoot = "";
 			targets = (
 				1106CA471F01A0FA00434E58 /* Blurry */,
+				11B5315E2559B1CE00B79764 /* Blurry-old */,
 			);
 		};
 /* End PBXProject section */
@@ -243,50 +273,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11B531732559B1CE00B79764 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B531742559B1CE00B79764 /* Acknowledgement.txt in Resources */,
+				11B531752559B1CE00B79764 /* LaunchScreen.storyboard in Resources */,
+				11B531762559B1CE00B79764 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		28259E3B5C043F02F311B5FE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Blurry-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FD0E38EB25D0F0DE9A529F8D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Blurry/Pods-Blurry-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Blurry/Pods-Blurry-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1106CA441F01A0FA00434E58 /* Sources */ = {
@@ -309,6 +306,29 @@
 				1106CA4C1F01A0FA00434E58 /* AppDelegate.swift in Sources */,
 				A1B4F712234AE261004203BB /* ColorPickerView.swift in Sources */,
 				11376D56206DB294006E15BA /* Blurry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B531602559B1CE00B79764 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B531612559B1CE00B79764 /* UIView++.swift in Sources */,
+				11B531622559B1CE00B79764 /* CGSize++.swift in Sources */,
+				11B531632559B1CE00B79764 /* UIImageEffects.m in Sources */,
+				11B531642559B1CE00B79764 /* RootViewController.swift in Sources */,
+				11B531652559B1CE00B79764 /* Prompt.swift in Sources */,
+				11B531662559B1CE00B79764 /* AcknowledgementViewController.swift in Sources */,
+				11B531672559B1CE00B79764 /* AboutItemCell.swift in Sources */,
+				11B531682559B1CE00B79764 /* AboutSceneDelegate.swift in Sources */,
+				11B531692559B1CE00B79764 /* BlurStyle.swift in Sources */,
+				11B5316A2559B1CE00B79764 /* Bundle++.swift in Sources */,
+				11B5316B2559B1CE00B79764 /* SceneDelegate.swift in Sources */,
+				11B5316C2559B1CE00B79764 /* UIImage++.swift in Sources */,
+				11B5316D2559B1CE00B79764 /* AboutViewController.swift in Sources */,
+				11B5316E2559B1CE00B79764 /* AppDelegate.swift in Sources */,
+				11B5316F2559B1CE00B79764 /* ColorPickerView.swift in Sources */,
+				11B531702559B1CE00B79764 /* Blurry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +372,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -377,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -411,6 +432,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -430,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -440,7 +462,51 @@
 		};
 		1106CA711F01A0FA00434E58 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D45DDB810E75DB286B730FF7 /* Pods-Blurry.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Blurry/Blurry.entitlements;
+				CURRENT_PROJECT_VERSION = 17;
+				DEVELOPMENT_TEAM = TSCXJ4KWQ4;
+				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andyliang.Blurry;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Blurry/UIImageEffects/Blurry-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Debug;
+		};
+		1106CA721F01A0FA00434E58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Blurry/Blurry.entitlements;
+				CURRENT_PROJECT_VERSION = 17;
+				DEVELOPMENT_TEAM = TSCXJ4KWQ4;
+				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andyliang.Blurry;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Blurry/UIImageEffects/Blurry-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Release;
+		};
+		11B531792559B1CE00B79764 /* Debug */ = {
+			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -448,8 +514,8 @@
 				CURRENT_PROJECT_VERSION = 16;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = TSCXJ4KWQ4;
-				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/BlurryOld-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andyliang.Blurry;
@@ -458,13 +524,12 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Blurry/UIImageEffects/Blurry-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
-		1106CA721F01A0FA00434E58 /* Release */ = {
+		11B5317A2559B1CE00B79764 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE354B4331EC79CCA9DF7664 /* Pods-Blurry.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -472,8 +537,8 @@
 				CURRENT_PROJECT_VERSION = 16;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_TEAM = TSCXJ4KWQ4;
-				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/BlurryOld-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.5.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andyliang.Blurry;
@@ -481,7 +546,7 @@
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Blurry/UIImageEffects/Blurry-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -502,6 +567,15 @@
 			buildConfigurations = (
 				1106CA711F01A0FA00434E58 /* Debug */,
 				1106CA721F01A0FA00434E58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11B531782559B1CE00B79764 /* Build configuration list for PBXNativeTarget "Blurry-old" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B531792559B1CE00B79764 /* Debug */,
+				11B5317A2559B1CE00B79764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
