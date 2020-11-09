@@ -1,10 +1,4 @@
-//
-//  CGSize++.swift
-//  Blurry
-//
-//  Created by Andy Liang on 3/29/18.
 //  Copyright © 2018 Andy Liang. All rights reserved.
-//
 
 import UIKit
 

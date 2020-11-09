@@ -1,10 +1,4 @@
-//
-//  AcknowledgementViewController.swift
-//  Blurry
-//
-//  Created by Andy Liang on 2019-10-07.
 //  Copyright © 2019 Andy Liang. All rights reserved.
-//
 
 import UIKit
 
@@ -27,14 +21,8 @@ class AcknowledgementViewController: UIViewController {
             textView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
 
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemBackground
-            textView.backgroundColor = .systemBackground
-        } else {
-            view.backgroundColor = UIColor(named: "Background")
-            textView.backgroundColor = UIColor(named: "Background")
-            textView.textColor = .white
-        }
+        view.backgroundColor = .systemBackground
+        textView.backgroundColor = .systemBackground
 
         // load the content
         if let filePath = Bundle.main.path(forResource: "Acknowledgement", ofType: "txt"),

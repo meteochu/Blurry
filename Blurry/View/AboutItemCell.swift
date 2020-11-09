@@ -1,10 +1,4 @@
-//
-//  AboutItemCell.swift
-//  Blurry
-//
-//  Created by Andy Liang on 2019-10-07.
 //  Copyright © 2019 Andy Liang. All rights reserved.
-//
 
 import UIKit
 
@@ -26,20 +20,8 @@ class AboutItemCell : UITableViewCell, UIPointerInteractionDelegate {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: reuseIdentifier)
-        if #available(iOS 13.0, *) {
-            detailTextLabel?.textColor = .secondaryLabel
-        } else {
-            textLabel?.textColor = .white
-            detailTextLabel?.textColor = .lightText
-            backgroundColor = UIColor(named: "Background")
-            let backgroundView = UIView()
-            backgroundView.backgroundColor = UIColor(white: 0.15, alpha: 1.0)
-            selectedBackgroundView = backgroundView
-        }
-
-        if #available(iOS 13.4, *) {
-            addInteraction(UIPointerInteraction(delegate: self))
-        }
+        detailTextLabel?.textColor = .secondaryLabel
+        addInteraction(UIPointerInteraction(delegate: self))
     }
 
     required init?(coder: NSCoder) {
@@ -56,7 +38,6 @@ class AboutItemCell : UITableViewCell, UIPointerInteractionDelegate {
         }
     }
 
-    @available(iOS 13.4, *)
     func pointerInteraction(
         _ interaction: UIPointerInteraction, styleFor region: UIPointerRegion
     ) -> UIPointerStyle? {

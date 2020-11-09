@@ -1,10 +1,4 @@
-//
-//  ColorPickerView.swift
-//  Blurry
-//
-//  Created by Andy Liang on 2019-10-06.
 //  Copyright © 2019 Andy Liang. All rights reserved.
-//
 
 import UIKit
 import ChromaColorPicker

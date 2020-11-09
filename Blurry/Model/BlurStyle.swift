@@ -1,10 +1,4 @@
-//
-//  BlurStyle.swift
-//  Blurry
-//
-//  Created by Andy Liang on 6/30/17.
 //  Copyright © 2017 Andy Liang. All rights reserved.
-//
 
 import UIKit
 
@@ -25,15 +19,7 @@ enum BlurStyle {
     }
 
     var titleAttributes: [NSAttributedString.Key: Any] {
-        if #available(iOS 13.0, *) {
-            return [.foregroundColor: tintColor]
-        } else {
-            return [
-                .font: UIFont.systemFont(ofSize: 12, weight: .bold),
-                .kern: 2.0,
-                .foregroundColor: tintColor
-            ]
-        }
+        return [.foregroundColor: tintColor]
     }
     
     var backgroundColor: UIColor {
@@ -64,11 +50,6 @@ enum BlurStyle {
     }
 
     static var allTitles: [String] {
-        let titles = ["Dark", "Light", "Custom"]
-        if #available(iOS 13.0, *) {
-            return titles
-        } else {
-            return titles.map { $0.uppercased() }
-        }
+        return ["Dark", "Light", "Custom"]
     }
 }

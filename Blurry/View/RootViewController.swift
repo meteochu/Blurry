@@ -1,13 +1,6 @@
-//
-//  RootViewController.swift
-//  Blurry
-//
-//  Created by Andy Liang on 2019-10-06.
 //  Copyright © 2019 Andy Liang. All rights reserved.
-//
 
 import UIKit
-import ChromaColorPicker
 
 class RootViewController : UIViewController {
 
@@ -32,11 +25,7 @@ class RootViewController : UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         switch blurry.blurStyle {
         case .light:
-            if #available(iOS 13.0, *) {
-                return .darkContent
-            } else {
-                return .default
-            }
+            return .darkContent
         default:
             return .lightContent
         }
@@ -54,9 +43,7 @@ class RootViewController : UIViewController {
         blurModePicker.selectedSegmentIndex = 0
         blurModePicker.addTarget(self, action: #selector(blurModeDidChange), for: .valueChanged)
         blurModePicker.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
-        if #available(iOS 13.0, *) {
-            blurModePicker.selectedSegmentTintColor = UIColor(white: 1.0, alpha: 0.25)
-        }
+        blurModePicker.selectedSegmentTintColor = UIColor(white: 1.0, alpha: 0.25)
         
         blurRadiusLabel.font = .preferredFont(forTextStyle: .headline)
         blurRadiusLabel.text = "Blur Radius (\(Int(CGFloat.defaultBlurRadius)))"
@@ -85,13 +72,12 @@ class RootViewController : UIViewController {
         contentView.spacing = 12
         contentView.setCustomSpacing(4, after: blurRadiusLabel)
 
-        if #available(iOS 13.4, *) {
-            browseButton.isPointerInteractionEnabled = true
-            saveButton.isPointerInteractionEnabled = true
-            #if !targetEnvironment(macCatalyst)
-            infoButton.isPointerInteractionEnabled = true
-            #endif
-        }
+        browseButton.isPointerInteractionEnabled = true
+        saveButton.isPointerInteractionEnabled = true
+        #if !targetEnvironment(macCatalyst)
+        infoButton.isPointerInteractionEnabled = true
+        #endif
+
 
         view.addSubviewWithAutoLayout(imageView)
         view.addSubviewWithAutoLayout(colorPickerView)

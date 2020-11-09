@@ -99,7 +99,6 @@
 			children = (
 				1106CA4A1F01A0FA00434E58 /* Blurry */,
 				1106CA491F01A0FA00434E58 /* Products */,
-				E82980E9E419390F3ABD25A6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,13 +180,6 @@
 				A1B4F71C234B027E004203BB /* Bundle++.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		E82980E9E419390F3ABD25A6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -1,10 +1,4 @@
-//
-//  UIImage++.swift
-//  Blurry
-//
-//  Created by Andy Liang on 6/30/17.
 //  Copyright © 2017 Andy Liang. All rights reserved.
-//
 
 import UIKit
 

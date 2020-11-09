@@ -1,10 +1,4 @@
-//
-//  AboutViewController.swift
-//  Blurry
-//
-//  Created by Andy Liang on 2019-10-07.
 //  Copyright © 2019 Andy Liang. All rights reserved.
-//
 
 import UIKit
 import MessageUI
@@ -13,17 +7,11 @@ class AboutViewController: UITableViewController {
     private var sections: [AboutSection] = []
 
     init() {
-        if #available(iOS 13.0, *) {
-            super.init(style: .insetGrouped)
+        super.init(style: .insetGrouped)
 #if !targetEnvironment(macCatalyst)
-            navigationItem.rightBarButtonItem = UIBarButtonItem(
-                barButtonSystemItem: .close, target: self, action: #selector(didTapCloseButton))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .close, target: self, action: #selector(didTapCloseButton))
 #endif
-        } else {
-            super.init(style: .grouped)
-            navigationItem.rightBarButtonItem = UIBarButtonItem(
-                barButtonSystemItem: .done, target: self, action: #selector(didTapCloseButton))
-        }
         title = "About"
     }
 
@@ -59,18 +47,9 @@ class AboutViewController: UITableViewController {
         tableView.tableFooterView = versionLabel
         versionLabel.sizeToFit()
 
-        if #available(iOS 13.0, *) {
-            titleLabel.textColor = .label
-            detailLabel.textColor = .secondaryLabel
-            versionLabel.textColor = .secondaryLabel
-        } else {
-            titleLabel.textColor = .white
-            detailLabel.textColor = .lightGray
-            versionLabel.textColor = .lightGray
-            tableView.separatorColor = UIColor(white: 0.15, alpha: 1.0)
-            view.backgroundColor = UIColor(named: "Background")
-            navigationController?.navigationBar.barStyle = .black
-        }
+        titleLabel.textColor = .label
+        detailLabel.textColor = .secondaryLabel
+        versionLabel.textColor = .secondaryLabel
     }
 
     override func viewDidLoad() {
