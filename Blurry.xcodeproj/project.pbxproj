@@ -29,7 +29,6 @@
 		A1B4F710234ADD4B004203BB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70F234ADD4B004203BB /* RootViewController.swift */; };
 		A1B4F716234AF641004203BB /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F715234AF641004203BB /* UIView++.swift */; };
 		A1B4F71D234B027E004203BB /* Bundle++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71C234B027E004203BB /* Bundle++.swift */; };
-		A1DEF4FC234D5B1B00BA58D1 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +60,6 @@
 		A1B4F715234AF641004203BB /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
 		A1B4F71C234B027E004203BB /* Bundle++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle++.swift"; sourceTree = "<group>"; };
 		A1CB720B234BC0CB00654734 /* Blurry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blurry.entitlements; sourceTree = "<group>"; };
-		A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +146,6 @@
 				A1B4F70F234ADD4B004203BB /* RootViewController.swift */,
 				11850A622559B7DD005E0813 /* NavigationController.swift */,
 				115DDDB0255A390B004F5FD5 /* CustomPaletteView.swift */,
-				A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */,
 				115DDD91255A3303004F5FD5 /* About */,
 			);
 			path = View;
@@ -253,7 +250,6 @@
 				115DDD93255A330D004F5FD5 /* MailComposerButton.swift in Sources */,
 				A1B4F710234ADD4B004203BB /* RootViewController.swift in Sources */,
 				11850A672559B8F1005E0813 /* AboutView.swift in Sources */,
-				A1DEF4FC234D5B1B00BA58D1 /* Prompt.swift in Sources */,
 				11850A632559B7DD005E0813 /* NavigationController.swift in Sources */,
 				A189B20423666BCA001C5814 /* AboutSceneDelegate.swift in Sources */,
 				1165BC761F06E44200460749 /* BlurStyle.swift in Sources */,

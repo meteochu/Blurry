@@ -74,7 +74,7 @@ class RootViewController : UIViewController {
                 self?.present(picker, animated: true, completion: nil)
             },
             UIAction(title: "File Browser", image: UIImage(systemName: "folder")) { [weak self] _ in
-                let picker = UIDocumentPickerViewController(documentTypes: ["public.image"], in: .import)
+                let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.image], asCopy: true)
                 picker.delegate = self
                 self?.present(picker, animated: true, completion: nil)
             }
@@ -83,17 +83,39 @@ class RootViewController : UIViewController {
         saveButton.isEnabled = false
         saveButton.setTitle("Save Image", for: .normal)
         saveButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
-        saveButton.addAction(UIAction { [unowned self] action in
-            guard let button = action.sender as? UIButton else { return }
-            let alertController = UIAlertController(title: "Processing...", message: nil, preferredStyle: .actionSheet)
-            if let popover = alertController.popoverPresentationController {
-                popover.sourceView = button
-                popover.sourceRect = button.bounds
+        let shareAction = UIAction(title: "Share") { _ in
+            self.processSaveRequest { image in
+                let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: [])
+                shareSheet.modalPresentationStyle = .popover
+                if let popover = shareSheet.popoverPresentationController {
+                    popover.sourceView = self.saveButton
+                    popover.sourceRect = self.saveButton.bounds
+                }
+                self.present(shareSheet, animated: true, completion: nil)
             }
-            present(alertController, animated: true) {
-                self.processSaveRequest(from: button, with: alertController)
+        }
+        #if targetEnvironment(macCatalyst)
+        let saveAction = UIAction(title: "Save to Files") { _ in
+            self.processSaveRequest { image in
+                let fileName = "blurry-\(self.fileName ?? "image.jpeg")"
+                guard let data = image.jpegData(compressionQuality: 0.8),
+                      let exportURL = FileManager.default
+                        .urls(for: .documentDirectory, in: .userDomainMask)
+                        .first?.appendingPathComponent(fileName) else { return }
+                do {
+                    try data.write(to: exportURL)
+                    let browser = UIDocumentPickerViewController(forExporting: [exportURL], asCopy: true)
+                    self.present(browser, animated: true, completion: nil)
+                } catch {
+                    print(error)
+                }
             }
-        }, for: .primaryActionTriggered)
+        }
+        saveButton.menu = UIMenu(title: "Destination", children: [shareAction, saveAction])
+        saveButton.showsMenuAsPrimaryAction = true
+        #else
+        saveButton.addAction(shareAction, for: .touchUpInside)
+        #endif
 
         let contentView = UIStackView(arrangedSubviews: [
             blurModePicker, blurRadiusLabel, radiusSlider, browseButton, saveButton
@@ -191,54 +213,18 @@ class RootViewController : UIViewController {
         print("[Blurry] opened file: \(fileName ?? "-")")
     }
 
-    private func processSaveRequest(from button: UIButton, with alertController: UIAlertController) {
-        if let image = blurry.applyBlur() {
-            func showShareSheet() {
-                let shareSheet = UIActivityViewController(activityItems: [image], applicationActivities: [])
-                shareSheet.modalPresentationStyle = .popover
-                if let popover = shareSheet.popoverPresentationController {
-                    popover.sourceView = button
-                    popover.sourceRect = button.bounds
-                }
-                self.present(shareSheet, animated: true, completion: nil)
-            }
-
-            func showSavePrompt() {
-                let fileName = "blurry-\(self.fileName ?? "image.jpeg")"
-                guard let data = image.jpegData(compressionQuality: 0.8),
-                    let exportURL = FileManager.default
-                        .urls(for: .documentDirectory, in: .userDomainMask)
-                        .first?.appendingPathComponent(fileName) else { return }
-                do {
-                    try data.write(to: exportURL)
-                    let browser = UIDocumentPickerViewController(url: exportURL, in: .exportToService)
-                    self.present(browser, animated: true, completion: nil)
-                } catch {
-                    print(error)
-                }
-            }
-
-            alertController.dismiss(animated: true) {
-#if targetEnvironment(macCatalyst)
-                var prompt = Prompt(source: button)
-                prompt.add(title: "Share", action: showShareSheet)
-                prompt.add(title: "Save to Files", action: showSavePrompt)
-                self.present(prompt.alertController, animated: true, completion: nil)
-#else
-                showShareSheet()
-#endif
-            }
-        } else {
-            alertController.dismiss(animated: true) {
-                let failedAlert = UIAlertController(
-                    title: "Save Failed...",
-                    message: "There was no source photo.",
-                    preferredStyle: .alert)
-                let cancelAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
-                failedAlert.addAction(cancelAction)
-                self.present(failedAlert, animated: true, completion: nil)
-            }
+    private func processSaveRequest(with saveAction: (UIImage) -> Void) {
+        guard let image = blurry.applyBlur() else {
+            let failedAlert = UIAlertController(
+                title: "Save Failed...",
+                message: "There was no source photo.",
+                preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+            failedAlert.addAction(cancelAction)
+            self.present(failedAlert, animated: true, completion: nil)
+            return
         }
+        saveAction(image)
     }
 }
 
@@ -271,9 +257,6 @@ extension RootViewController : UIDocumentPickerDelegate {
     }
     
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        // 1. make sure we can import first...
-        guard controller.documentPickerMode == .import else { return }
-        // 2. load the image by loading the data from URL first
         guard let url = urls.first,
               let data = try? Data(contentsOf: url),
               let image = UIImage(data: data)
