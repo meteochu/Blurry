@@ -10,7 +10,7 @@ class RootViewController : UIViewController {
     private let browseButton = UIButton()
     private let saveButton = UIButton()
     private let blurRadiusLabel = UILabel()
-    private let colorPickerView = ColorPickerView()
+    private let paletteView = CustomPaletteView()
 #if !targetEnvironment(macCatalyst)
     private let infoButton = UIButton(type: .detailDisclosure)
 #endif
@@ -37,8 +37,8 @@ class RootViewController : UIViewController {
         imageView.contentMode = .scaleAspectFill
         view.addInteraction(UIDropInteraction(delegate: self))
         
-        colorPickerView.delegate = self
-        colorPickerView.isHidden = true
+        paletteView.delegate = self
+        paletteView.isHidden = true
 
         let blurModePicker = UISegmentedControl(items: BlurStyle.allTitles)
         blurModePicker.selectedSegmentIndex = 0
@@ -51,21 +51,49 @@ class RootViewController : UIViewController {
         blurRadiusLabel.font = .preferredFont(forTextStyle: .headline)
         blurRadiusLabel.text = "Blur Radius (\(Int(CGFloat.defaultBlurRadius)))"
 
-        let radiusSlider = UISlider()
+        let radiusSlider = UISlider(frame: .zero, primaryAction: UIAction { [unowned self] action in
+            guard let value = (action.sender as? UISlider)?.value else { return }
+            let newValue = CGFloat(value.rounded())
+            // only re-blur image if there's a diff
+            guard abs(newValue - blurry.blurRadius) >= 1 else { return }
+            self.blurRadiusLabel.text = "Blur Radius (\(Int(newValue)))"
+            self.blurry.blurRadius = newValue
+        })
         radiusSlider.isContinuous = true
         radiusSlider.minimumValue = 0.0
         radiusSlider.maximumValue = 200
         radiusSlider.value = Float(CGFloat.defaultBlurRadius)
-        radiusSlider.addTarget(self, action: #selector(radiusSliderValueChanged), for: .valueChanged)
 
         browseButton.setTitle("Select Photo", for: .normal)
-        browseButton.addTarget(self, action: #selector(didTapBrowseButton), for: .touchUpInside)
         browseButton.titleLabel?.font = .preferredFont(forTextStyle: .headline)
+        browseButton.showsMenuAsPrimaryAction = true
+        browseButton.menu = UIMenu(title: "Select a Source", children: [
+            UIAction(title: "Photo Library", image: UIImage(systemName: "photo")) { [weak self] _ in
+                let picker = UIImagePickerController()
+                picker.delegate = self
+                self?.present(picker, animated: true, completion: nil)
+            },
+            UIAction(title: "File Browser", image: UIImage(systemName: "folder")) { [weak self] _ in
+                let picker = UIDocumentPickerViewController(documentTypes: ["public.image"], in: .import)
+                picker.delegate = self
+                self?.present(picker, animated: true, completion: nil)
+            }
+        ])
 
         saveButton.isEnabled = false
         saveButton.setTitle("Save Image", for: .normal)
-        saveButton.addTarget(self, action: #selector(didTapSaveButton), for: .touchUpInside)
         saveButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+        saveButton.addAction(UIAction { [unowned self] action in
+            guard let button = action.sender as? UIButton else { return }
+            let alertController = UIAlertController(title: "Processing...", message: nil, preferredStyle: .actionSheet)
+            if let popover = alertController.popoverPresentationController {
+                popover.sourceView = button
+                popover.sourceRect = button.bounds
+            }
+            present(alertController, animated: true) {
+                self.processSaveRequest(from: button, with: alertController)
+            }
+        }, for: .primaryActionTriggered)
 
         let contentView = UIStackView(arrangedSubviews: [
             blurModePicker, blurRadiusLabel, radiusSlider, browseButton, saveButton
@@ -81,12 +109,15 @@ class RootViewController : UIViewController {
         infoButton.isPointerInteractionEnabled = true
         #endif
 
-
         view.addSubviewWithAutoLayout(imageView)
-        view.addSubviewWithAutoLayout(colorPickerView)
+        view.addSubviewWithAutoLayout(paletteView)
         view.addSubviewWithAutoLayout(contentView)
         #if !targetEnvironment(macCatalyst)
-        infoButton.addTarget(self, action: #selector(didTapInfoButton), for: .touchUpInside)
+        infoButton.addAction(UIAction { [weak self] _ in
+            let viewController = UINavigationController(rootViewController: UIHostingController(rootView: AboutView()))
+            self?.present(viewController, animated: true, completion: nil)
+        }, for: .primaryActionTriggered)
+
         view.addSubviewWithAutoLayout(infoButton)
         #endif
 
@@ -100,15 +131,15 @@ class RootViewController : UIViewController {
             imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             // 2. color picker view
-            colorPickerView.topAnchor.constraint(greaterThanOrEqualTo: safeAreaGuide.topAnchor, constant: 8),
-            colorPickerView.leadingAnchor.constraint(greaterThanOrEqualTo: guide.leadingAnchor),
-            colorPickerView.trailingAnchor.constraint(lessThanOrEqualTo: guide.trailingAnchor),
-            colorPickerView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-            colorPickerView.bottomAnchor.constraint(equalTo: view.centerYAnchor).atPriority(.defaultLow),
+            paletteView.topAnchor.constraint(greaterThanOrEqualTo: safeAreaGuide.topAnchor, constant: 8),
+            paletteView.leadingAnchor.constraint(greaterThanOrEqualTo: guide.leadingAnchor),
+            paletteView.trailingAnchor.constraint(lessThanOrEqualTo: guide.trailingAnchor),
+            paletteView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
+            paletteView.bottomAnchor.constraint(equalTo: view.centerYAnchor).atPriority(.defaultLow),
             // 3. content view
-            contentView.topAnchor.constraint(equalTo: colorPickerView.bottomAnchor, constant: 32),
-            contentView.leadingAnchor.constraint(equalTo: colorPickerView.leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: colorPickerView.trailingAnchor),
+            contentView.topAnchor.constraint(equalTo: paletteView.bottomAnchor, constant: 32),
+            contentView.leadingAnchor.constraint(equalTo: paletteView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: paletteView.trailingAnchor),
             contentView.bottomAnchor.constraint(lessThanOrEqualTo: safeAreaGuide.bottomAnchor, constant: -8),
         ])
 
@@ -128,54 +159,15 @@ class RootViewController : UIViewController {
         case 1: // light
             blurry.blurStyle = .light
         case 2: // custom
-            blurry.blurStyle = .tintColor(colorPickerView.color)
+            blurry.blurStyle = .custom(tint: paletteView.currentColor, saturation: paletteView.currentSaturationValue)
         default:
             break
         }
         if segmentedControl.traitCollection.userInterfaceIdiom != .mac {
             segmentedControl.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
         }
-        colorPickerView.isHidden = !blurry.blurStyle.shouldDisplayPicker
+        paletteView.isHidden = !blurry.blurStyle.shouldDisplayPicker
         updateUI()
-    }
-
-    @objc private func didTapSaveButton(_ button: UIButton) {
-        let alertController = UIAlertController(title: "Processing...", message: nil, preferredStyle: .actionSheet)
-        if let popover = alertController.popoverPresentationController {
-            popover.sourceView = button
-            popover.sourceRect = button.bounds
-        }
-        present(alertController, animated: true) {
-            self.processSaveRequest(from: button, with: alertController)
-        }
-    }
-
-    @objc private func didTapBrowseButton(_ button: UIButton) {
-        var prompt = Prompt(title: "Select a Source", source: button)
-        prompt.add(title: "Photo Library") {
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            self.present(picker, animated: true, completion: nil)
-        }
-        prompt.add(title: "File Browser") {
-            let picker = UIDocumentPickerViewController(documentTypes: ["public.image"], in: .import)
-            picker.delegate = self
-            self.present(picker, animated: true, completion: nil)
-        }
-        present(prompt.alertController, animated: true, completion: nil)
-    }
-
-    @objc private func radiusSliderValueChanged(_ slider: UISlider) {
-        let newValue = CGFloat(Int(slider.value))
-        // only re-blur image if there's a diff
-        guard abs(newValue - blurry.blurRadius) >= 1 else { return }
-        blurRadiusLabel.text = "Blur Radius (\(Int(newValue)))"
-        blurry.blurRadius = newValue
-    }
-
-    @objc private func didTapInfoButton() {
-        let viewController = UINavigationController(rootViewController: UIHostingController(rootView: AboutView()))
-        present(viewController, animated: true, completion: nil)
     }
 
     private func updateUI() {
@@ -184,7 +176,6 @@ class RootViewController : UIViewController {
         view.backgroundColor = backgroundColor
         view.tintColor = tintColor
         blurRadiusLabel.textColor = tintColor
-        colorPickerView.alphaLabel.textColor = tintColor
         browseButton.setTitleColor(tintColor, for: .normal)
         browseButton.setTitleColor(tintColor.withAlphaComponent(0.5), for: .highlighted)
         saveButton.setTitleColor(tintColor, for: .normal)
@@ -252,7 +243,6 @@ class RootViewController : UIViewController {
 }
 
 extension RootViewController : UIDropInteractionDelegate {
-
     func dropInteraction(
         _ interaction: UIDropInteraction,
         sessionDidUpdate session: UIDropSession
@@ -320,9 +310,9 @@ extension RootViewController :
     }
 }
 
-extension RootViewController : ColorPickerDelegate {
-    func colorPickerDidChooseColor(_ picker: ColorPickerView, color: UIColor) {
-        blurry.blurStyle = .tintColor(color)
+extension RootViewController : CustomPaletteViewDelegate {
+    func paletteViewDidSelectColor(_ color: UIColor, saturation: CGFloat, in view: CustomPaletteView) {
+        blurry.blurStyle = .custom(tint: color, saturation: saturation)
         updateUI()
     }
 }

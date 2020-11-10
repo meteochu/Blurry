@@ -1,6 +1,7 @@
 //  Copyright © 2020 Andy Liang. All rights reserved.
 
 import SwiftUI
+import MessageUI
 
 struct MailComposerButton<Content: View> : View {
     let message: Message

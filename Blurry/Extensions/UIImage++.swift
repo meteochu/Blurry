@@ -9,9 +9,9 @@ extension UIImage {
             return UIImageEffects.imageByApplyingDarkEffect(to: self, withRadius: radius)
         case .light:
             return  UIImageEffects.imageByApplyingLightEffect(to: self, withRadius: radius)
-        case .tintColor(let color):
+        case .custom(let color, let saturation):
             return UIImageEffects.imageByApplyingBlur(
-                to: self, withRadius: radius, tintColor: color, saturationDeltaFactor: -1, maskImage: nil)
+                to: self, withRadius: radius, tintColor: color, saturationDeltaFactor: saturation, maskImage: nil)
         }
     }
     

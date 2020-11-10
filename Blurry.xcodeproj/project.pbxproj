@@ -16,34 +16,17 @@
 		115DDD9B255A34E1004F5FD5 /* AcknowledgementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115DDD9A255A34E1004F5FD5 /* AcknowledgementView.swift */; };
 		115DDD9F255A34F8004F5FD5 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115DDD9E255A34F8004F5FD5 /* AboutCell.swift */; };
 		115DDDA3255A3513004F5FD5 /* AboutHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115DDDA2255A3513004F5FD5 /* AboutHeaderView.swift */; };
-		115DDDAC255A3597004F5FD5 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11850A622559B7DD005E0813 /* NavigationController.swift */; };
+		115DDDB1255A390B004F5FD5 /* CustomPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115DDDB0255A390B004F5FD5 /* CustomPaletteView.swift */; };
 		1165BC741F06E42900460749 /* UIImage++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC731F06E42900460749 /* UIImage++.swift */; };
 		1165BC761F06E44200460749 /* BlurStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC751F06E44200460749 /* BlurStyle.swift */; };
 		11850A632559B7DD005E0813 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11850A622559B7DD005E0813 /* NavigationController.swift */; };
 		11850A672559B8F1005E0813 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11850A662559B8F1005E0813 /* AboutView.swift */; };
-		11B531612559B1CE00B79764 /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F715234AF641004203BB /* UIView++.swift */; };
-		11B531622559B1CE00B79764 /* CGSize++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B91EBB206DEF160070454D /* CGSize++.swift */; };
-		11B531632559B1CE00B79764 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */; };
-		11B531642559B1CE00B79764 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70F234ADD4B004203BB /* RootViewController.swift */; };
-		11B531652559B1CE00B79764 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */; };
-		11B531682559B1CE00B79764 /* AboutSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B20323666BCA001C5814 /* AboutSceneDelegate.swift */; };
-		11B531692559B1CE00B79764 /* BlurStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC751F06E44200460749 /* BlurStyle.swift */; };
-		11B5316A2559B1CE00B79764 /* Bundle++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71C234B027E004203BB /* Bundle++.swift */; };
-		11B5316B2559B1CE00B79764 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70D234ADB76004203BB /* SceneDelegate.swift */; };
-		11B5316C2559B1CE00B79764 /* UIImage++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1165BC731F06E42900460749 /* UIImage++.swift */; };
-		11B5316E2559B1CE00B79764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106CA4B1F01A0FA00434E58 /* AppDelegate.swift */; };
-		11B5316F2559B1CE00B79764 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F711234AE261004203BB /* ColorPickerView.swift */; };
-		11B531702559B1CE00B79764 /* Blurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11376D55206DB294006E15BA /* Blurry.swift */; };
-		11B531742559B1CE00B79764 /* Acknowledgement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11FAAF941F32B248007D212F /* Acknowledgement.txt */; };
-		11B531752559B1CE00B79764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA541F01A0FA00434E58 /* LaunchScreen.storyboard */; };
-		11B531762559B1CE00B79764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1106CA521F01A0FA00434E58 /* Assets.xcassets */; };
 		11B91EBC206DEF160070454D /* CGSize++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B91EBB206DEF160070454D /* CGSize++.swift */; };
 		11F5AA5E1F01A89200FC1522 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F5AA5D1F01A89200FC1522 /* UIImageEffects.m */; };
 		11FAAF951F32B248007D212F /* Acknowledgement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 11FAAF941F32B248007D212F /* Acknowledgement.txt */; };
 		A189B20423666BCA001C5814 /* AboutSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A189B20323666BCA001C5814 /* AboutSceneDelegate.swift */; };
 		A1B4F70E234ADB76004203BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70D234ADB76004203BB /* SceneDelegate.swift */; };
 		A1B4F710234ADD4B004203BB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F70F234ADD4B004203BB /* RootViewController.swift */; };
-		A1B4F712234AE261004203BB /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F711234AE261004203BB /* ColorPickerView.swift */; };
 		A1B4F716234AF641004203BB /* UIView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F715234AF641004203BB /* UIView++.swift */; };
 		A1B4F71D234B027E004203BB /* Bundle++.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B4F71C234B027E004203BB /* Bundle++.swift */; };
 		A1DEF4FC234D5B1B00BA58D1 /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */; };
@@ -61,11 +44,11 @@
 		115DDD9A255A34E1004F5FD5 /* AcknowledgementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcknowledgementView.swift; sourceTree = "<group>"; };
 		115DDD9E255A34F8004F5FD5 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		115DDDA2255A3513004F5FD5 /* AboutHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutHeaderView.swift; sourceTree = "<group>"; };
+		115DDDB0255A390B004F5FD5 /* CustomPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPaletteView.swift; sourceTree = "<group>"; };
 		1165BC731F06E42900460749 /* UIImage++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage++.swift"; sourceTree = "<group>"; };
 		1165BC751F06E44200460749 /* BlurStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurStyle.swift; sourceTree = "<group>"; };
 		11850A622559B7DD005E0813 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		11850A662559B8F1005E0813 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		11B5317B2559B1CE00B79764 /* Blurry-old.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blurry-old.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B5317C2559B1CF00B79764 /* BlurryOld-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BlurryOld-Info.plist"; path = "/Users/andyl/Projects/Apps/Blurry/Blurry/Supporting Files/BlurryOld-Info.plist"; sourceTree = "<absolute>"; };
 		11B91EBB206DEF160070454D /* CGSize++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize++.swift"; sourceTree = "<group>"; };
 		11F5AA5B1F01A89100FC1522 /* Blurry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blurry-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -75,7 +58,6 @@
 		A189B20323666BCA001C5814 /* AboutSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSceneDelegate.swift; sourceTree = "<group>"; };
 		A1B4F70D234ADB76004203BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A1B4F70F234ADD4B004203BB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		A1B4F711234AE261004203BB /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		A1B4F715234AF641004203BB /* UIView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView++.swift"; sourceTree = "<group>"; };
 		A1B4F71C234B027E004203BB /* Bundle++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle++.swift"; sourceTree = "<group>"; };
 		A1CB720B234BC0CB00654734 /* Blurry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blurry.entitlements; sourceTree = "<group>"; };
@@ -84,13 +66,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		1106CA451F01A0FA00434E58 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11B531712559B1CE00B79764 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -112,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				1106CA481F01A0FA00434E58 /* Blurry.app */,
-				11B5317B2559B1CE00B79764 /* Blurry-old.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,10 +145,10 @@
 		A1B4F713234AE2B0004203BB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */,
-				A1B4F711234AE261004203BB /* ColorPickerView.swift */,
-				11850A622559B7DD005E0813 /* NavigationController.swift */,
 				A1B4F70F234ADD4B004203BB /* RootViewController.swift */,
+				11850A622559B7DD005E0813 /* NavigationController.swift */,
+				115DDDB0255A390B004F5FD5 /* CustomPaletteView.swift */,
+				A1DEF4FB234D5B1B00BA58D1 /* Prompt.swift */,
 				115DDD91255A3303004F5FD5 /* About */,
 			);
 			path = View;
@@ -220,23 +194,6 @@
 			productReference = 1106CA481F01A0FA00434E58 /* Blurry.app */;
 			productType = "com.apple.product-type.application";
 		};
-		11B5315E2559B1CE00B79764 /* Blurry-old */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 11B531782559B1CE00B79764 /* Build configuration list for PBXNativeTarget "Blurry-old" */;
-			buildPhases = (
-				11B531602559B1CE00B79764 /* Sources */,
-				11B531712559B1CE00B79764 /* Frameworks */,
-				11B531732559B1CE00B79764 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Blurry-old";
-			productName = Blurr;
-			productReference = 11B5317B2559B1CE00B79764 /* Blurry-old.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -267,7 +224,6 @@
 			projectRoot = "";
 			targets = (
 				1106CA471F01A0FA00434E58 /* Blurry */,
-				11B5315E2559B1CE00B79764 /* Blurry-old */,
 			);
 		};
 /* End PBXProject section */
@@ -280,16 +236,6 @@
 				11FAAF951F32B248007D212F /* Acknowledgement.txt in Resources */,
 				1106CA561F01A0FA00434E58 /* LaunchScreen.storyboard in Resources */,
 				1106CA531F01A0FA00434E58 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11B531732559B1CE00B79764 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11B531742559B1CE00B79764 /* Acknowledgement.txt in Resources */,
-				11B531752559B1CE00B79764 /* LaunchScreen.storyboard in Resources */,
-				11B531762559B1CE00B79764 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,29 +264,8 @@
 				115DDD97255A332D004F5FD5 /* MailComposerView.swift in Sources */,
 				115DDD9F255A34F8004F5FD5 /* AboutCell.swift in Sources */,
 				1106CA4C1F01A0FA00434E58 /* AppDelegate.swift in Sources */,
-				A1B4F712234AE261004203BB /* ColorPickerView.swift in Sources */,
+				115DDDB1255A390B004F5FD5 /* CustomPaletteView.swift in Sources */,
 				11376D56206DB294006E15BA /* Blurry.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11B531602559B1CE00B79764 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11B531612559B1CE00B79764 /* UIView++.swift in Sources */,
-				11B531622559B1CE00B79764 /* CGSize++.swift in Sources */,
-				11B531632559B1CE00B79764 /* UIImageEffects.m in Sources */,
-				11B531642559B1CE00B79764 /* RootViewController.swift in Sources */,
-				11B531652559B1CE00B79764 /* Prompt.swift in Sources */,
-				115DDDAC255A3597004F5FD5 /* NavigationController.swift in Sources */,
-				11B531682559B1CE00B79764 /* AboutSceneDelegate.swift in Sources */,
-				11B531692559B1CE00B79764 /* BlurStyle.swift in Sources */,
-				11B5316A2559B1CE00B79764 /* Bundle++.swift in Sources */,
-				11B5316B2559B1CE00B79764 /* SceneDelegate.swift in Sources */,
-				11B5316C2559B1CE00B79764 /* UIImage++.swift in Sources */,
-				11B5316E2559B1CE00B79764 /* AppDelegate.swift in Sources */,
-				11B5316F2559B1CE00B79764 /* ColorPickerView.swift in Sources */,
-				11B531702559B1CE00B79764 /* Blurry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,51 +442,6 @@
 			};
 			name = Release;
 		};
-		11B531792559B1CE00B79764 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Blurry/Blurry.entitlements;
-				CURRENT_PROJECT_VERSION = 16;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = TSCXJ4KWQ4;
-				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/BlurryOld-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.5.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyliang.Blurry;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Blurry/UIImageEffects/Blurry-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
-			};
-			name = Debug;
-		};
-		11B5317A2559B1CE00B79764 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Blurry/Blurry.entitlements;
-				CURRENT_PROJECT_VERSION = 16;
-				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = TSCXJ4KWQ4;
-				INFOPLIST_FILE = "$(SRCROOT)/Blurry/Supporting Files/BlurryOld-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.5.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andyliang.Blurry;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Blurry/UIImageEffects/Blurry-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -579,15 +459,6 @@
 			buildConfigurations = (
 				1106CA711F01A0FA00434E58 /* Debug */,
 				1106CA721F01A0FA00434E58 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		11B531782559B1CE00B79764 /* Build configuration list for PBXNativeTarget "Blurry-old" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11B531792559B1CE00B79764 /* Debug */,
-				11B5317A2559B1CE00B79764 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

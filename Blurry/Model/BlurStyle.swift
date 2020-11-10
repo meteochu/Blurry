@@ -5,7 +5,7 @@ import UIKit
 enum BlurStyle {
     case dark
     case light
-    case tintColor(UIColor)
+    case custom(tint: UIColor, saturation: CGFloat)
     
     var tintColor: UIColor {
         switch self {
@@ -13,7 +13,7 @@ enum BlurStyle {
             return .white
         case .light:
             return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
-        case .tintColor:
+        case .custom:
             return .white
         }
     }
@@ -28,14 +28,14 @@ enum BlurStyle {
             return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
         case .light:
             return UIColor(white: 0.9, alpha: 1)
-        case .tintColor(let color):
+        case .custom(let color, _):
             return color
         }
     }
 
     var infoButtonColor: UIColor {
         switch self {
-        case .dark, .tintColor:
+        case .dark, .custom:
             return UIColor(red: 0.15, green: 0.22, blue: 0.5, alpha: 1)
         case .light:
             return UIColor(white: 0.9, alpha: 1)
@@ -44,7 +44,7 @@ enum BlurStyle {
 
     var shouldDisplayPicker: Bool {
         switch self {
-        case .tintColor: return true
+        case .custom: return true
         default: return false
         }
     }
