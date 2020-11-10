@@ -24,16 +24,6 @@
       "filename" : "Icon-iPad@2x.png",
       "idiom" : "ipad",
       "scale" : "2x"
-    },
-    {
-      "filename" : "MacIcon.png",
-      "idiom" : "mac",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "MacIcon@2x.png",
-      "idiom" : "mac",
-      "scale" : "2x"
     }
   ],
   "info" : {
