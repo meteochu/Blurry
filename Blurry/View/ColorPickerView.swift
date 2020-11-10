@@ -1,15 +1,15 @@
 //  Copyright © 2019 Andy Liang. All rights reserved.
 
 import UIKit
-import ChromaColorPicker
 
 protocol ColorPickerDelegate : class {
     func colorPickerDidChooseColor(_ picker: ColorPickerView, color: UIColor)
 }
 
-class ColorPickerView : UIView, ChromaColorPickerDelegate {
+class ColorPickerView : UIView {
     weak var delegate: ColorPickerDelegate?
-    
+
+    let colorWell = UIColorWell()
     let alphaLabel = UILabel()
     var color: UIColor { currentColor.withAlphaComponent(currentAlpha) }
 
@@ -23,10 +23,12 @@ class ColorPickerView : UIView, ChromaColorPickerDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let colorPicker = ChromaColorPicker()
-        colorPicker.hexLabel.textColor = .white
-        colorPicker.stroke = 6
-        colorPicker.delegate = self
+        colorWell.selectedColor = currentColor
+        colorWell.supportsAlpha = true
+//        let colorPicker = ChromaColorPicker()
+//        colorPicker.hexLabel.textColor = .white
+//        colorPicker.stroke = 6
+//        colorPicker.delegate = self
 
 
         alphaLabel.text = "Alpha"
@@ -38,7 +40,7 @@ class ColorPickerView : UIView, ChromaColorPickerDelegate {
         slider.maximumValue = 1.0
         slider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
 
-        let contentView = UIStackView(arrangedSubviews: [colorPicker, alphaLabel, slider])
+        let contentView = UIStackView(arrangedSubviews: [colorWell, alphaLabel, slider])
         contentView.spacing = 4.0
         contentView.axis = .vertical
 
@@ -49,7 +51,7 @@ class ColorPickerView : UIView, ChromaColorPickerDelegate {
             contentView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             contentView.topAnchor.constraint(equalTo: layoutMarginsGuide.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: layoutMarginsGuide.bottomAnchor),
-            colorPicker.widthAnchor.constraint(equalTo: colorPicker.heightAnchor),
+//            colorPicker.widthAnchor.constraint(equalTo: colorWell.heightAnchor),
             heightAnchor.constraint(greaterThanOrEqualToConstant: 300),
             widthAnchor.constraint(greaterThanOrEqualToConstant: 280)
         ])
@@ -62,10 +64,10 @@ class ColorPickerView : UIView, ChromaColorPickerDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
-        currentColor = color
-    }
+//
+//    func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+//        currentColor = color
+//    }
 
     @objc private func sliderValueChanged(_ slider: UISlider) {
         let newAlpha = CGFloat(slider.value)

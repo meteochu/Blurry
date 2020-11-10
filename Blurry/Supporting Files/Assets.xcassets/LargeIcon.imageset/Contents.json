@@ -1,45 +1,43 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
       "filename" : "Icon.png",
+      "idiom" : "iphone",
       "scale" : "1x"
     },
     {
-      "idiom" : "iphone",
       "filename" : "Icon@2x.png",
+      "idiom" : "iphone",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "filename" : "Icon@3x.png",
+      "idiom" : "iphone",
       "scale" : "3x"
     },
     {
-      "idiom" : "ipad",
       "filename" : "Icon-iPad.png",
+      "idiom" : "ipad",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "filename" : "Icon-iPad@2x.png",
+      "idiom" : "ipad",
       "scale" : "2x"
     },
     {
-      "idiom" : "ipad",
       "filename" : "MacIcon.png",
-      "subtype" : "mac-catalyst",
+      "idiom" : "mac",
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "filename" : "MacIcon@2x.png",
-      "subtype" : "mac-catalyst",
+      "idiom" : "mac",
       "scale" : "2x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

@@ -1,6 +1,7 @@
 //  Copyright © 2019 Andy Liang. All rights reserved.
 
 import UIKit
+import SwiftUI
 
 class RootViewController : UIViewController {
 
@@ -42,8 +43,10 @@ class RootViewController : UIViewController {
         let blurModePicker = UISegmentedControl(items: BlurStyle.allTitles)
         blurModePicker.selectedSegmentIndex = 0
         blurModePicker.addTarget(self, action: #selector(blurModeDidChange), for: .valueChanged)
-        blurModePicker.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
-        blurModePicker.selectedSegmentTintColor = UIColor(white: 1.0, alpha: 0.25)
+        if traitCollection.userInterfaceIdiom != .mac {
+            blurModePicker.selectedSegmentTintColor = UIColor(white: 1.0, alpha: 0.25)
+            blurModePicker.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
+        }
         
         blurRadiusLabel.font = .preferredFont(forTextStyle: .headline)
         blurRadiusLabel.text = "Blur Radius (\(Int(CGFloat.defaultBlurRadius)))"
@@ -129,7 +132,9 @@ class RootViewController : UIViewController {
         default:
             break
         }
-        segmentedControl.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
+        if segmentedControl.traitCollection.userInterfaceIdiom != .mac {
+            segmentedControl.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
+        }
         colorPickerView.isHidden = !blurry.blurStyle.shouldDisplayPicker
         updateUI()
     }
@@ -169,7 +174,7 @@ class RootViewController : UIViewController {
     }
 
     @objc private func didTapInfoButton() {
-        let viewController = UINavigationController(rootViewController: AboutViewController())
+        let viewController = UINavigationController(rootViewController: UIHostingController(rootView: AboutView()))
         present(viewController, animated: true, completion: nil)
     }
 

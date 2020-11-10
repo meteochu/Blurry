@@ -37,25 +37,15 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
     }
 
 #if targetEnvironment(macCatalyst)
-    override func buildMenu(with builder: UIMenuBuilder) {
-        builder.remove(menu: .format)
-        builder.replaceChildren(ofMenu: .about) { _ in
-            let action = UIAction(title: "About Blurry") { _ in
-                UIApplication.shared.requestSceneSessionActivation(
-                    nil, userActivity: NSUserActivity(activityType: "about-page"),
-                    options: nil, errorHandler: nil)
-            }
-            return [ action ]
-        }
+    @objc func orderFrontStandardAboutPanel(_ sender: Any?) {
+        UIApplication.shared.requestSceneSessionActivation(
+            nil, userActivity: NSUserActivity(activityType: "about-page"),
+            options: nil, errorHandler: nil)
+    }
+
+    @objc func showHelp(_ sender: Any?) {
         let url = URL(string: "mailto:blurry@andyliang.me")!
-        builder.replaceChildren(ofMenu: .help) { elements in
-            let action = UIAction(title: "Contact Support") { action in
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-            return [action]
-        }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 #endif
-
-    
 }
