@@ -195,6 +195,7 @@ class RootViewController : UIViewController {
         let backgroundColor = blurry.blurStyle.backgroundColor
         view.backgroundColor = backgroundColor
         view.tintColor = tintColor
+        paletteView.labelColor = tintColor
         blurRadiusLabel.textColor = tintColor
         browseButton.setTitleColor(tintColor, for: .normal)
         browseButton.setTitleColor(tintColor.withAlphaComponent(0.5), for: .highlighted)
