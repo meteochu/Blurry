@@ -6,6 +6,12 @@ enum BlurStyle {
     case dark
     case light
     case custom(tint: UIColor, saturation: CGFloat)
+
+    enum Label : String, CaseIterable {
+        case dark
+        case light
+        case custom
+    }
     
     var tintColor: UIColor {
         switch self {

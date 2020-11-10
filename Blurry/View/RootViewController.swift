@@ -40,12 +40,28 @@ class RootViewController : UIViewController {
         paletteView.delegate = self
         paletteView.isHidden = true
 
-        let blurModePicker = UISegmentedControl(items: BlurStyle.allTitles)
+        let blurModePicker = UISegmentedControl(frame: .zero, actions: BlurStyle.Label.allCases.map { label in
+            return UIAction(title: label.rawValue.capitalized) { [unowned self] action in
+                let style: BlurStyle
+                switch label {
+                case .dark: style = .dark
+                case .light: style = .light
+                case .custom: style = .custom(
+                    tint: self.paletteView.currentColor,
+                    saturation: self.paletteView.currentSaturationValue)
+                }
+                self.blurry.blurStyle = style
+                if let segmentedControl = action.sender as? UISegmentedControl {
+                    segmentedControl.setTitleTextAttributes(style.titleAttributes, for: .normal)
+                }
+                self.paletteView.isHidden = !style.shouldDisplayPicker
+                self.updateUI()
+            }
+        })
         blurModePicker.selectedSegmentIndex = 0
-        blurModePicker.addTarget(self, action: #selector(blurModeDidChange), for: .valueChanged)
+        blurModePicker.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
         if traitCollection.userInterfaceIdiom != .mac {
             blurModePicker.selectedSegmentTintColor = UIColor(white: 1.0, alpha: 0.25)
-            blurModePicker.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
         }
         
         blurRadiusLabel.font = .preferredFont(forTextStyle: .headline)
@@ -171,24 +187,6 @@ class RootViewController : UIViewController {
             infoButton.trailingAnchor.constraint(equalTo: safeAreaGuide.trailingAnchor, constant: -16)
         ])
 #endif
-        updateUI()
-    }
-
-    @objc private func blurModeDidChange(_ segmentedControl: UISegmentedControl) {
-        switch segmentedControl.selectedSegmentIndex {
-        case 0: // dark
-            blurry.blurStyle = .dark
-        case 1: // light
-            blurry.blurStyle = .light
-        case 2: // custom
-            blurry.blurStyle = .custom(tint: paletteView.currentColor, saturation: paletteView.currentSaturationValue)
-        default:
-            break
-        }
-        if segmentedControl.traitCollection.userInterfaceIdiom != .mac {
-            segmentedControl.setTitleTextAttributes(blurry.blurStyle.titleAttributes, for: .normal)
-        }
-        paletteView.isHidden = !blurry.blurStyle.shouldDisplayPicker
         updateUI()
     }
 
