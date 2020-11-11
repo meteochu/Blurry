@@ -9,6 +9,7 @@ struct AcknowledgementView : View {
                 .font(.footnote)
                 .padding()
                 .navigationBarHidden(ProcessInfo.processInfo.isMacCatalystApp)
+                .navigationTitle("Open Source Licenses")
         }
     }
 

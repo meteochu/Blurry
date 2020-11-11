@@ -5,7 +5,7 @@ import SwiftUI
 struct AboutHeaderView : View {
     var body: some View {
         VStack {
-            Image("MacIcon")
+            Image(isCatalyst ? "MacIcon" : "LargeIcon")
                 .shadow(color: Color.black.opacity(0.25), radius: 3, x: 0, y: 2)
             Text("Blurry")
                 .bold()

@@ -21,10 +21,11 @@ struct AboutCell<Content : View> : View {
                 .font(.body)
             Spacer()
             accessory
+                .font(.callout)
                 .foregroundColor(Color(.placeholderText))
         }
         .padding(.horizontal, 12)
-        .padding(.vertical, 4)
+        .padding(.vertical, isCatalyst ? 4 : 6)
         .frame(maxWidth: .infinity)
     }
 }

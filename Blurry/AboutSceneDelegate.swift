@@ -16,8 +16,8 @@ class AboutSceneDelegate: UIResponder, UIWindowSceneDelegate, NSToolbarDelegate 
         // 1. setup the size restrictions
         let maxSize = windowScene.sizeRestrictions!.maximumSize
         if let restrictions = windowScene.sizeRestrictions {
-            restrictions.minimumSize = CGSize(width: 360, height: 512)
-            restrictions.maximumSize = CGSize(width: 360, height: 512)
+            restrictions.minimumSize = CGSize(width: 360, height: 600)
+            restrictions.maximumSize = CGSize(width: 360, height: 600)
         }
         // 2. update the title bar
         let toolbar = NSToolbar(identifier: "About")
