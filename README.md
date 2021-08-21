@@ -9,8 +9,7 @@ Through an extraordinarily simple UI, and a selection of dark blur, light blur, 
 
 ## Product
 
-- [Blurry on iOS](https://apps.apple.com/app/id1254612844) (Requires iOS 11.4+)
-- [Blurry on Mac](https://apps.apple.com/app/id1482686361) (Requires macOS 10.15+)
+- [Blurry on the App Store](https://apps.apple.com/app/id1254612844) (Requires iOS 14.0, macOS 11.0)
 
 ## LICENSE
 
@@ -35,9 +34,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Open Source Licenses
-
-### [ChromaColorPicker](https://github.com/joncardasis/ChromaColorPicker)
-ChromaColorPicker is licensed under the [MIT License](https://github.com/joncardasis/ChromaColorPicker/blob/master/LICENSE)
 
 ### [UIImageEffects](https://developer.apple.com/library/content/samplecode/UIImageEffects/Introduction/Intro.html)
 IMPORTANT:  This Apple software is supplied to you by Apple
